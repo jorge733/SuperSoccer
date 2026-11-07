@@ -154,7 +154,7 @@ export class ControlHumano {
     }
 
     if (d.presionado('camara')) p.cambiarCamara();
-    if (d.presionado('pausa')) { p.pedirPausa(this); return; }
+    if (d.presionado('pausa') && !(p.bloqueoPausa > 0)) { p.pedirPausa(this); return; }
     if (!(juego || ejecutor)) { this.carga = null; p.hud?.potencia(null); return; }
 
     // ---------- Con balón o ejecutando pelota parada ----------
@@ -179,7 +179,7 @@ export class ControlHumano {
           this.carga = null;
           p.hud?.potencia(null);
           if (acc === 'tiro') {
-            const zObj = mag > 0.25 ? clamp(dir.z * 3.6, -3.4, 3.4) : 0;
+            const zObj = mag > 0.25 ? clamp(dir.z * 3.3, -3.1, 3.1) : 0;
             p.tiro(j, pot, { z: zObj, alto: clamp(pot - 0.35, 0, 0.8), humano: true });
           } else {
             const r = this.receptorEnDireccion(dirAccion, 70);

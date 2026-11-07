@@ -108,7 +108,7 @@ vercel --prod
 
 ## ✏️ Editar clubes y jugadores
 
-Todos los datos están en **`src/data/clubes.json`**: nombre, ciudad, estadio, nivel, colores de la camiseta titular y alternativa
+Todos los datos están en **`src/data/clubes.json`**: nombre, ciudad, estadio, nivel, formación que usa la CPU (`4-4-2`, `4-3-3`, `3-5-2`, `4-2-3-1`, `5-3-2`, `4-1-4-1`), colores de la camiseta titular y alternativa
 (con diseño: `liso`, `franjas`, `franjasFinas`, `banda`, `aros`, `diagonal`, `mitades`, `centro`), forma y diseño del emblema, y el plantel
 (nombre, dorsal, posición, atributos de velocidad, tiro, pase, regate, defensa, físico y arquero, y apariencia: altura, contextura,
 tono de piel, color y estilo de pelo, barba).

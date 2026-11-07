@@ -6,7 +6,10 @@ export let R = null;
 
 export async function iniciarFisica() {
   if (!R) {
-    await RAPIER.init();
+    // La librería avisa internamente de un parámetro obsoleto (no afecta en nada): lo silenciamos.
+    const aviso = console.warn;
+    console.warn = (...a) => { if (!String(a[0]).includes('deprecated parameters for the initialization')) aviso(...a); };
+    try { await RAPIER.init(); } finally { console.warn = aviso; }
     R = RAPIER;
   }
   return R;

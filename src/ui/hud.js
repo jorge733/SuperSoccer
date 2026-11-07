@@ -53,9 +53,9 @@ export class Hud {
     this.relatoT = segundos;
   }
 
-  banner(html) {
+  banner(html, arriba = false) {
     if (!this.el) return;
-    this.el.banner.innerHTML = html ? `<div class="banner-central">${html}</div>` : '';
+    this.el.banner.innerHTML = html ? `<div class="banner-central"${arriba ? ' style="top:78%"' : ''}>${html}</div>` : '';
   }
 
   repeticion(v) {
@@ -98,7 +98,7 @@ export class Hud {
     const po = pa.poseedor || pa.balonSujeto;
     const txt = po && pa.fase === 'juego' ? `<span class="dorsal" style="background:${po.equipo.kit.camiseta};color:#000">${po.dorsal}</span>${po.nombre}` : '';
     if (this.el.pos._t !== txt) { this.el.pos._t = txt; this.el.pos.innerHTML = txt; this.el.pos.style.display = txt ? '' : 'none'; }
-    this.el.radar.style.display = ajustes.radar && pa.fase !== 'repeticion' ? '' : 'none';
+    this.el.radar.style.display = ajustes.radar && pa.fase !== 'repeticion' && !pa.penales ? '' : 'none';
     if (ajustes.radar) this.dibujarRadar();
   }
 

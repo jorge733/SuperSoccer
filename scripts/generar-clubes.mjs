@@ -95,6 +95,13 @@ const CLUBES = [
     emblema: { forma: 'diamante', patron: 'aro', colores: ['#7a3e9d', '#f7f7f7', '#ffffff'] } },
 ];
 
+// Formación que usa la CPU con cada club (se puede cambiar: 4-4-2, 4-3-3, 3-5-2, 4-2-3-1, 5-3-2, 4-1-4-1)
+const FORMACION_CLUB = {
+  colocolo: '4-3-3', udechile: '4-2-3-1', ucatolica: '4-3-3', coquimbo: '4-2-3-1', ohiggins: '4-4-2', audax: '3-5-2',
+  palestino: '4-1-4-1', cobresal: '4-4-2', huachipato: '4-3-3', nublense: '5-3-2', limache: '4-4-2', calera: '5-3-2',
+  laserena: '4-4-2', everton: '4-2-3-1', udeconce: '4-1-4-1', dconcepcion: '4-4-2',
+};
+
 // Planteles: 2 arqueros, 6 defensas, 6 volantes, 4 delanteros (18 jugadores)
 const POSICIONES = [
   ['ARQ', 2], ['DEF', 6], ['VOL', 6], ['DEL', 4],
@@ -150,6 +157,7 @@ const salida = {
   nota: 'Jugadores ficticios. Emblemas originales (no son escudos oficiales). Puedes editar este archivo libremente.',
   clubes: CLUBES.map((c, i) => ({
     id: c.id, nombre: c.nombre, corto: c.corto, iniciales: c.iniciales, ciudad: c.ciudad, estadio: c.estadio, nivel: c.nivel,
+    formacion: FORMACION_CLUB[c.id] || '4-4-2',
     colores: { titular: c.titular, alternativa: c.alternativa, emblema: c.emblema.colores },
     emblema: { forma: c.emblema.forma, patron: c.emblema.patron },
     jugadores: generarJugadores(c, i),

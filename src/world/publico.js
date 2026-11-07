@@ -12,7 +12,7 @@ function geometriaHincha() {
     return g.index ? g.toNonIndexed() : g;
   };
   partes.push(marcar(new THREE.BoxGeometry(0.42, 0.55, 0.26).translate(0, 0.62, 0), 0));       // torso
-  partes.push(marcar(new THREE.SphereGeometry(0.12, 8, 6).translate(0, 1.04, 0.01), 0));        // cabeza
+  partes.push(marcar(new THREE.SphereGeometry(0.12, 6, 4).translate(0, 1.04, 0.01), 0));        // cabeza
   partes.push(marcar(new THREE.BoxGeometry(0.4, 0.34, 0.4).translate(0, 0.2, 0.1), 0));          // piernas (sentado)
   partes.push(marcar(new THREE.BoxGeometry(0.1, 0.48, 0.1).translate(0.27, 0.62, 0), 1));       // brazo izq
   partes.push(marcar(new THREE.BoxGeometry(0.1, 0.48, 0.1).translate(-0.27, 0.62, 0), -1));     // brazo der

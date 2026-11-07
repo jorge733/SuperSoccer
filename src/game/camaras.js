@@ -84,7 +84,10 @@ export class Camaras {
       }
       default: break;
     }
-    if (info.instantaneo) { this.cam.position.copy(this.posObj); this.mira.copy(this.miraObj); }
+    // En los menús, al cambiar de vista la cámara salta directo (sin viaje largo)
+    const salto = this.modo !== this._modoAnterior && (this.modo === 'vitrina' || this._modoAnterior === 'vitrina');
+    this._modoAnterior = this.modo;
+    if (info.instantaneo || salto) { this.cam.position.copy(this.posObj); this.mira.copy(this.miraObj); this.cam.fov = this.fovObj; }
     this.cam.position.x = suave(this.cam.position.x, this.posObj.x, rapidez, dt);
     this.cam.position.y = suave(this.cam.position.y, this.posObj.y, rapidez, dt);
     this.cam.position.z = suave(this.cam.position.z, this.posObj.z, rapidez, dt);

@@ -77,7 +77,12 @@ class App {
     try { await this.render.renderer.compileAsync(this.escena, this.camaras.cam); } catch { /* ignorar */ }
     progreso(1, '¡Listo!');
     this.menus = new Menus(this, document.getElementById('ui'));
-    this.input.alConectar = (d) => { aviso(`🎮 ${d.nombre()} conectado`); this.menus.alCambiarMandos(); };
+    this.input.alConectar = (d) => {
+      aviso(`🎮 ${d.nombre()} conectado`);
+      // Si el mando se reconecta en medio de un partido, vuelve a manejar a su jugador
+      for (const c of this.partido?.controles || []) if (c.disp.id === d.id) c.disp = d;
+      this.menus.alCambiarMandos();
+    };
     this.input.alDesconectar = (d) => {
       aviso(`⚠️ ${d.nombre()} desconectado`);
       if (this.partido && !this.partido.pausado && this.partido.controles.some((c) => c.disp === d)) this.pausar();
@@ -163,6 +168,7 @@ class App {
   continuar() {
     if (!this.partido) return;
     this.partido.pausado = false;
+    this.partido.bloqueoPausa = 0.35; // evita que el mismo botón vuelva a pausar
     this.menus.ocultar();
   }
 

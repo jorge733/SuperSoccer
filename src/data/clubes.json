@@ -11,6 +11,7 @@
       "ciudad": "Santiago (Macul)",
       "estadio": "Estadio Monumental David Arellano",
       "nivel": 82,
+      "formacion": "4-3-3",
       "colores": {
         "titular": {
           "camiseta": "#f7f7f7",
@@ -479,6 +480,7 @@
       "ciudad": "Santiago",
       "estadio": "Estadio Nacional Julio Martínez Prádanos",
       "nivel": 81,
+      "formacion": "4-2-3-1",
       "colores": {
         "titular": {
           "camiseta": "#0b3fa8",
@@ -947,6 +949,7 @@
       "ciudad": "Santiago (Las Condes)",
       "estadio": "Claro Arena",
       "nivel": 80,
+      "formacion": "4-3-3",
       "colores": {
         "titular": {
           "camiseta": "#f7f7f7",
@@ -1417,6 +1420,7 @@
       "ciudad": "Coquimbo",
       "estadio": "Estadio Francisco Sánchez Rumoroso",
       "nivel": 79,
+      "formacion": "4-2-3-1",
       "colores": {
         "titular": {
           "camiseta": "#f4c20d",
@@ -1885,6 +1889,7 @@
       "ciudad": "Rancagua",
       "estadio": "Estadio El Teniente",
       "nivel": 76,
+      "formacion": "4-4-2",
       "colores": {
         "titular": {
           "camiseta": "#5ab4e5",
@@ -2353,6 +2358,7 @@
       "ciudad": "Santiago (La Florida)",
       "estadio": "Estadio Bicentenario de La Florida",
       "nivel": 73,
+      "formacion": "3-5-2",
       "colores": {
         "titular": {
           "camiseta": "#11823b",
@@ -2821,6 +2827,7 @@
       "ciudad": "Santiago (La Cisterna)",
       "estadio": "Estadio Municipal de La Cisterna",
       "nivel": 75,
+      "formacion": "4-1-4-1",
       "colores": {
         "titular": {
           "camiseta": "#f7f7f7",
@@ -3291,6 +3298,7 @@
       "ciudad": "El Salvador",
       "estadio": "Estadio El Cobre",
       "nivel": 71,
+      "formacion": "4-4-2",
       "colores": {
         "titular": {
           "camiseta": "#f26a1b",
@@ -3759,6 +3767,7 @@
       "ciudad": "Talcahuano",
       "estadio": "Estadio Huachipato-CAP Acero",
       "nivel": 73,
+      "formacion": "4-3-3",
       "colores": {
         "titular": {
           "camiseta": "#1a3d8f",
@@ -4227,6 +4236,7 @@
       "ciudad": "Chillán",
       "estadio": "Estadio Municipal Nelson Oyarzún",
       "nivel": 71,
+      "formacion": "5-3-2",
       "colores": {
         "titular": {
           "camiseta": "#c8102e",
@@ -4695,6 +4705,7 @@
       "ciudad": "Limache",
       "estadio": "Estadio Municipal Ángel Navarrete Candia",
       "nivel": 68,
+      "formacion": "4-4-2",
       "colores": {
         "titular": {
           "camiseta": "#d2232a",
@@ -5163,6 +5174,7 @@
       "ciudad": "La Calera",
       "estadio": "Estadio Municipal Nicolás Chahuán Nazar",
       "nivel": 69,
+      "formacion": "5-3-2",
       "colores": {
         "titular": {
           "camiseta": "#e2231a",
@@ -5631,6 +5643,7 @@
       "ciudad": "La Serena",
       "estadio": "Estadio La Portada",
       "nivel": 70,
+      "formacion": "4-4-2",
       "colores": {
         "titular": {
           "camiseta": "#7d1426",
@@ -6099,6 +6112,7 @@
       "ciudad": "Viña del Mar",
       "estadio": "Estadio Sausalito",
       "nivel": 72,
+      "formacion": "4-2-3-1",
       "colores": {
         "titular": {
           "camiseta": "#1d3f8f",
@@ -6568,6 +6582,7 @@
       "ciudad": "Concepción",
       "estadio": "Estadio Ester Roa Rebolledo",
       "nivel": 69,
+      "formacion": "4-1-4-1",
       "colores": {
         "titular": {
           "camiseta": "#f4c20d",
@@ -7036,6 +7051,7 @@
       "ciudad": "Concepción",
       "estadio": "Estadio Ester Roa Rebolledo",
       "nivel": 68,
+      "formacion": "4-4-2",
       "colores": {
         "titular": {
           "camiseta": "#7a3e9d",

@@ -72,7 +72,8 @@ export class Partido {
     const c = this.config;
     const [kl, kv] = c.kits || elegirKits(c.local, c.visita);
     this.equipos = [c.local, c.visita].map((club, i) => {
-      const formacion = (c.formaciones && c.formaciones[i]) || (i === 0 ? ajustes.formacion : '4-4-2');
+      const humano = (c.humanos || []).some((h) => h.equipo === i);
+      const formacion = (c.formaciones && c.formaciones[i]) || (humano ? ajustes.formacion : club.formacion || '4-4-2');
       const { once, suplentes } = elegirOnce(club, formacion);
       const eq = {
         indice: i, club, kit: i === 0 ? kl : kv, formacion, dir: i === 0 ? 1 : -1, goles: 0, penales: 0,
@@ -231,8 +232,9 @@ export class Partido {
     const foco = tmp.set(this.equipos[0].jugadores[0].pos.x, 0, this.equipos[0].jugadores[0].pos.z);
     if (t > 4.5 && this.camaras.cine?.tipo === 'tunel') this.camaras.iniciarCine('estadio', { angulo: 2.6 });
     this.camaras.actualizar(dt, { balon: this.balon.pos, foco });
-    const saltar = this.input.nav.aceptar || this.input.nav.inicio;
-    if (t > 9 || (t > 0.5 && saltar)) {
+    const n = this.input.nav;
+    const saltar = n.aceptar || n.inicio || n.volver;
+    if (t > 9 || (t > 0.3 && saltar)) {
       this.hud.banner(null);
       this.camaras.terminarCine();
       this.prepararSaqueInicial(0);
@@ -255,6 +257,7 @@ export class Partido {
   actualizar(dt) {
     if (this.pausado) return;
     this.tFase += dt;
+    if (this.bloqueoPausa > 0) this.bloqueoPausa -= dt;
     this.correrTemporizadores(dt);
     for (const c of this.controles) c.actualizarIndicador(dt);
     if (this.fase === 'presentacion') { this.actualizarPresentacion(dt); this.comun(dt); return; }
@@ -612,8 +615,9 @@ export class Partido {
     tx = clamp(tx, -MITAD_L + 0.5, MITAD_L + (tipo === 'filtrado' ? 0 : 0)); tz = clamp(tz, -MITAD_A + 0.5, MITAD_A - 0.5);
     const sigma = (0.02 + (1 - j.at.pase / 100) * 0.1) * errorMult * (j.controlado ? 0.8 : 1) * (j.proteger ? 1.2 : 1);
     this.marcarOffside(j.equipo, j);
-    if (j.controlado) { j.controlado.ultimoPasador = true; if (!receptor.controlado) j.controlado.asignar(receptor); }
-    this.receptorPase = receptor;
+    const real = receptor instanceof Jugador;
+    if (j.controlado) { j.controlado.ultimoPasador = true; if (real && !receptor.controlado) j.controlado.asignar(receptor); }
+    this.receptorPase = real ? receptor : null;
     this.ultimoPaseDeCompanero = true;
     const d = Math.hypot(tx - b.pos.x, tz - b.pos.z);
     j.mirarHacia(tx, tz);
@@ -1660,7 +1664,7 @@ export class Partido {
     this.penalCtrlP = ctrlP; this.penalCtrlA = ctrlA;
     this.camaras.iniciarCine('fijo', { pos: new THREE.Vector3(spot - 9, 2.6, -2.5), mira: new THREE.Vector3(ax, 1.1, 0), fov: 40, corte: true });
     const tabla = this.textoPenales();
-    this.hud.banner(`${tabla}<small>Patea: ${pateador.nombre} (${eq.club.corto})${ctrlP ? ` · Apunta y mantén ${this.input.etiqueta(ctrlP.disp, 'tiro')}` : ''}${ctrlA ? ` · Arquero: elige lado con el stick y ${this.input.etiqueta(ctrlA.disp, 'pase')}` : ''}</small>`);
+    this.hud.banner(`${tabla}<small>Patea: ${pateador.nombre} (${eq.club.corto})${ctrlP ? ` · Apunta con el stick y mantén ${this.input.etiqueta(ctrlP.disp, 'tiro')}` : ''}${ctrlA ? ' · Tú atajas: elige el lado con el stick antes del remate' : ''}</small>`, true);
     this.carga = null;
   }
 
@@ -1694,7 +1698,7 @@ export class Partido {
       if (cP && this.penalT > 0.6) {
         const d = cP.disp;
         const dir = cP.direccion(d.mx, d.my);
-        this.apunteZ = clamp(dir.z * 3.4, -3.4, 3.4);
+        this.apunteZ = clamp(dir.z * 3.1, -3.1, 3.1);
         this.apunteY = clamp(0.35 + dir.x * 0.6, 0, 1); // stick hacia el arco = más alto
         if (d.presionado('tiro')) this.carga = 0;
         if (this.carga !== null && this.carga !== undefined) {
@@ -1782,7 +1786,7 @@ export class Partido {
     } else if (na === nb && a.penales !== b.penales) fin = true;
     if (fin) {
       pe.terminado = true;
-      this.hud.banner(this.textoPenales());
+      this.hud.banner(this.textoPenales(), true);
       this.programar(() => {
         if (this.dirOriginal) this.equipos.forEach((e, i) => { e.dir = this.dirOriginal[i]; });
         this.camaras.terminarCine();

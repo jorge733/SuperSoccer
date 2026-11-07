@@ -32,8 +32,8 @@ const UMBRAL_GATILLO = 0.35;
 
 function tipoMando(id) {
   const s = (id || '').toLowerCase();
-  if (/054c|playstation|dualsense|dualshock|wireless controller|ps4|ps5/.test(s)) return 'ps';
   if (/xbox|xinput|045e|microsoft/.test(s)) return 'xbox';
+  if (/054c|playstation|dualsense|dualshock|wireless controller|ps4|ps5/.test(s)) return 'ps';
   return 'generico';
 }
 
@@ -83,6 +83,7 @@ class EstadoDispositivo {
 export class Controles {
   constructor() {
     this.teclas = new Set();
+    this.pulsadas = new Set();
     this.dispositivos = new Map(); // id -> EstadoDispositivo
     this.teclado = new EstadoDispositivo('teclado', 'teclado');
     this.dispositivos.set('teclado', this.teclado);
@@ -104,6 +105,7 @@ export class Controles {
       }
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space', 'Tab'].includes(e.code)) e.preventDefault();
       this.teclas.add(e.code);
+      if (!e.repeat) this.pulsadas.add(e.code); // recuerda toques cortos aunque el cuadro sea lento
     });
     window.addEventListener('keyup', (e) => this.teclas.delete(e.code));
     window.addEventListener('blur', () => this.teclas.clear());
@@ -173,7 +175,10 @@ export class Controles {
     t.mx = x / m; t.my = y / m;
     t.rx = (k.has('KeyL') ? 1 : 0) - (k.has('KeyJ') ? 1 : 0);
     t.ry = (k.has('KeyI') ? 1 : 0) - (k.has('KeyK') ? 1 : 0);
-    for (const a of ACCIONES) t.actual[a.id] = k.has(this.mapeoTeclado[a.id]);
+    for (const a of ACCIONES) {
+      const cod = this.mapeoTeclado[a.id];
+      t.actual[a.id] = k.has(cod) || (this.pulsadas.has(cod) && !t.anterior[a.id]);
+    }
     t.gatillo = t.actual.correr ? 1 : 0;
     this.acumularTiempos(t, dt);
 
@@ -233,10 +238,10 @@ export class Controles {
     else if (k.has('ArrowLeft') || k.has('KeyA')) dir = 'izq';
     else if (k.has('ArrowRight') || k.has('KeyD')) dir = 'der';
     if (this._enterAnt === undefined) this._enterAnt = false;
-    const enter = k.has('Enter') || k.has('Space');
+    const enter = k.has('Enter') || k.has('Space') || this.pulsadas.has('Enter') || this.pulsadas.has('Space');
     if (enter && !this._enterAnt) { n.aceptar = true; n.origen = tk; }
     this._enterAnt = enter;
-    const esc = k.has('Escape') || k.has('Backspace');
+    const esc = k.has('Escape') || k.has('Backspace') || this.pulsadas.has('Escape') || this.pulsadas.has('Backspace');
     if (esc && !this._escAnt) { n.volver = true; n.origen = tk; }
     this._escAnt = esc;
 
@@ -256,6 +261,11 @@ export class Controles {
       if (pres(9) && !n.aceptar) { n.inicio = true; n.origen = d; }
     }
     const r = this.repeticion;
+    // Toques cortos de flechas
+    if (!dir) {
+      for (const [c, d] of [['ArrowUp', 'arriba'], ['ArrowDown', 'abajo'], ['ArrowLeft', 'izq'], ['ArrowRight', 'der']]) if (this.pulsadas.has(c)) dir = d;
+    }
+    this.pulsadas.clear();
     if (dir) {
       if (dir !== r.dir) { r.dir = dir; r.t = 0.38; n[dir] = true; }
       else {

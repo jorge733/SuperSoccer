@@ -4,6 +4,8 @@ import { R } from './fisica.js';
 import { CANCHA, MITAD_L } from './medidas.js';
 
 const RADIO = CANCHA.radioBalon;
+const _ax = new THREE.Vector3(), _m = new THREE.Vector3(), _w = new THREE.Vector3(), _q = new THREE.Quaternion();
+const _dir = new THREE.Vector3(), _lado = new THREE.Vector3(), _aCam = new THREE.Vector3();
 const MASA = 0.43;
 
 // Textura del balón: 32 paneles (12 pentágonos + 20 hexágonos) calculados por píxel.
@@ -144,13 +146,12 @@ export class Balon {
     this.leer();
     const v = this.vel;
     const vel = v.length();
-    const ax = new THREE.Vector3();
+    const ax = _ax.set(0, 0, 0);
     // Roce del aire
     if (vel > 0.01) ax.addScaledVector(v, -0.011 * vel);
     // Efecto Magnus (curva)
     if (this.efecto.lengthSq() > 0.01 && !this.enSuelo()) {
-      const m = new THREE.Vector3().crossVectors(this.efecto, v).multiplyScalar(0.013);
-      ax.add(m);
+      ax.add(_m.crossVectors(this.efecto, v).multiplyScalar(0.013));
     }
     this.efecto.multiplyScalar(Math.exp(-0.5 * h));
     // Roce del pasto (rodando)
@@ -175,14 +176,11 @@ export class Balon {
     this.leer();
     this.malla.position.copy(this.pos);
     // Giro visual: rodando en el suelo o según el efecto en el aire.
-    const w = new THREE.Vector3();
+    const w = _w;
     if (this.enSuelo()) w.set(this.vel.z, 0, -this.vel.x).divideScalar(RADIO);
-    else w.copy(this.efecto).addScaledVector(new THREE.Vector3(this.vel.z, 0, -this.vel.x), 2);
+    else w.set(this.vel.z * 2, 0, -this.vel.x * 2).add(this.efecto);
     const ang = w.length() * dt;
-    if (ang > 1e-5) {
-      const q = new THREE.Quaternion().setFromAxisAngle(w.normalize(), ang);
-      this.malla.quaternion.premultiply(q);
-    }
+    if (ang > 1e-5) this.malla.quaternion.premultiply(_q.setFromAxisAngle(w.normalize(), ang));
     this.sombra.position.set(this.pos.x, 0.015, this.pos.z);
     const s = Math.max(0.3, 1 - this.pos.y * 0.12);
     this.sombra.scale.setScalar(s);
@@ -192,13 +190,13 @@ export class Balon {
     const vel = this.vel.length();
     const objetivo = vel > 21 && !this.enSuelo() ? Math.min(1, (vel - 21) / 8) : 0;
     this.intensidadEstela += (objetivo - this.intensidadEstela) * Math.min(1, dt * 8);
-    this.estelaPts.pop();
-    this.estelaPts.unshift(this.pos.clone());
+    const viejo = this.estelaPts.pop();
+    this.estelaPts.unshift(viejo.copy(this.pos));
     this.estela.material.uniforms.intensidad.value = this.intensidadEstela;
     this.estela.visible = this.intensidadEstela > 0.01;
     if (this.estela.visible && camara) {
       const pos = this.estela.geometry.attributes.position, al = this.estela.geometry.attributes.alpha;
-      const dir = new THREE.Vector3(), lado = new THREE.Vector3(), aCam = new THREE.Vector3();
+      const dir = _dir, lado = _lado, aCam = _aCam;
       for (let i = 0; i < this.N_ESTELA; i++) {
         const p = this.estelaPts[i], q = this.estelaPts[Math.min(i + 1, this.N_ESTELA - 1)];
         dir.subVectors(p, q); if (dir.lengthSq() < 1e-6) dir.set(1, 0, 0);

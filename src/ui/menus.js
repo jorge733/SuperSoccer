@@ -262,6 +262,8 @@ export class Menus {
 
   humanosDesdeAsignacion(asig) {
     const res = [];
+    const lista = this.app.input.listaDispositivos();
+    if (!lista.some((d) => d.id in asig)) asig[lista[0].id] = 'local';
     for (const d of this.app.input.listaDispositivos()) {
       const v = asig[d.id];
       if (v === 'local') res.push({ dispositivo: d, equipo: 0 });
