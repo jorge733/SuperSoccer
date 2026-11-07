@@ -1,0 +1,7500 @@
+{
+  "version": 1,
+  "temporada": "Liga de Primera 2026",
+  "nota": "Jugadores ficticios. Emblemas originales (no son escudos oficiales). Puedes editar este archivo libremente.",
+  "clubes": [
+    {
+      "id": "colocolo",
+      "nombre": "Colo-Colo",
+      "corto": "Colo-Colo",
+      "iniciales": "CC",
+      "ciudad": "Santiago (Macul)",
+      "estadio": "Estadio Monumental David Arellano",
+      "nivel": 82,
+      "colores": {
+        "titular": {
+          "camiseta": "#f7f7f7",
+          "short": "#111111",
+          "medias": "#f7f7f7",
+          "detalle": "#111111",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#111111",
+          "short": "#111111",
+          "medias": "#111111",
+          "detalle": "#f7f7f7",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#111111",
+          "#f7f7f7",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "circulo",
+        "patron": "estrella"
+      },
+      "jugadores": [
+        {
+          "nombre": "Martín Vidal",
+          "camiseta": "Vidal",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 49,
+            "pase": 65,
+            "regate": 55,
+            "defensa": 52,
+            "fisico": 76,
+            "arquero": 89
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 0.97,
+            "piel": 7,
+            "colorPelo": 2,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Maximiliano Núñez",
+          "camiseta": "Núñez",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 56,
+            "tiro": 54,
+            "pase": 69,
+            "regate": 46,
+            "defensa": 56,
+            "fisico": 86,
+            "arquero": 90
+          },
+          "apariencia": {
+            "altura": 1.93,
+            "contextura": 1.06,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Enzo Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 84,
+            "tiro": 69,
+            "pase": 85,
+            "regate": 76,
+            "defensa": 86,
+            "fisico": 89,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.7,
+            "contextura": 0.91,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Felipe Salazar",
+          "camiseta": "Salazar",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 70,
+            "pase": 78,
+            "regate": 78,
+            "defensa": 94,
+            "fisico": 83,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1,
+            "piel": 1,
+            "colorPelo": 7,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Kevin Bustos",
+          "camiseta": "Bustos",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 88,
+            "tiro": 73,
+            "pase": 74,
+            "regate": 73,
+            "defensa": 95,
+            "fisico": 85,
+            "arquero": 37
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 0.91,
+            "piel": 7,
+            "colorPelo": 7,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Alexis Gutiérrez",
+          "camiseta": "Gutiérrez",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 70,
+            "pase": 76,
+            "regate": 70,
+            "defensa": 95,
+            "fisico": 90,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 1.04,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Eduardo Rivera",
+          "camiseta": "Rivera",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 59,
+            "pase": 73,
+            "regate": 71,
+            "defensa": 81,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 1.08,
+            "piel": 0,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Claudio Sánchez",
+          "camiseta": "Sánchez",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 69,
+            "pase": 82,
+            "regate": 77,
+            "defensa": 88,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 1.01,
+            "piel": 6,
+            "colorPelo": 2,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Martín Herrera",
+          "camiseta": "Herrera",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 88,
+            "tiro": 79,
+            "pase": 90,
+            "regate": 86,
+            "defensa": 86,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 0.95,
+            "piel": 4,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Hugo Salinas",
+          "camiseta": "Salinas",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 92,
+            "tiro": 83,
+            "pase": 93,
+            "regate": 90,
+            "defensa": 85,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 1.09,
+            "piel": 4,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Álvaro Zúñiga",
+          "camiseta": "Zúñiga",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 89,
+            "tiro": 73,
+            "pase": 86,
+            "regate": 81,
+            "defensa": 80,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 0.96,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Martín Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 72,
+            "pase": 86,
+            "regate": 81,
+            "defensa": 82,
+            "fisico": 75,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 0.96,
+            "piel": 1,
+            "colorPelo": 2,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Nicolás Cárdenas",
+          "camiseta": "Cárdenas",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 71,
+            "pase": 87,
+            "regate": 79,
+            "defensa": 72,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 0.97,
+            "piel": 4,
+            "colorPelo": 7,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Matías Ramírez",
+          "camiseta": "Ramírez",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 83,
+            "tiro": 72,
+            "pase": 83,
+            "regate": 76,
+            "defensa": 66,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 1.03,
+            "piel": 7,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Marcelo Sánchez",
+          "camiseta": "Sánchez",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 89,
+            "tiro": 86,
+            "pase": 80,
+            "regate": 84,
+            "defensa": 65,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 0.96,
+            "piel": 4,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Andrés Rojas",
+          "camiseta": "Rojas",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 87,
+            "tiro": 95,
+            "pase": 87,
+            "regate": 89,
+            "defensa": 64,
+            "fisico": 88,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.08,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gaspar Campos",
+          "camiseta": "Campos",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 87,
+            "pase": 71,
+            "regate": 77,
+            "defensa": 54,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.09,
+            "piel": 1,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Yerko Leiva",
+          "camiseta": "Leiva",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 86,
+            "tiro": 80,
+            "pase": 78,
+            "regate": 78,
+            "defensa": 58,
+            "fisico": 84,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 1.11,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "udechile",
+      "nombre": "Universidad de Chile",
+      "corto": "U. de Chile",
+      "iniciales": "UCH",
+      "ciudad": "Santiago",
+      "estadio": "Estadio Nacional Julio Martínez Prádanos",
+      "nivel": 81,
+      "colores": {
+        "titular": {
+          "camiseta": "#0b3fa8",
+          "short": "#f7f7f7",
+          "medias": "#0b3fa8",
+          "detalle": "#d52b1e",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#0b3fa8",
+          "medias": "#f7f7f7",
+          "detalle": "#0b3fa8",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#0b3fa8",
+          "#d52b1e",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "escudoRecto",
+        "patron": "aro"
+      },
+      "jugadores": [
+        {
+          "nombre": "Andrés Pizarro",
+          "camiseta": "Pizarro",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 57,
+            "pase": 74,
+            "regate": 57,
+            "defensa": 57,
+            "fisico": 78,
+            "arquero": 83
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 1.05,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Martín Escobar",
+          "camiseta": "Escobar",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 42,
+            "pase": 68,
+            "regate": 54,
+            "defensa": 47,
+            "fisico": 84,
+            "arquero": 79
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 0.95,
+            "piel": 1,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gonzalo Navarro",
+          "camiseta": "Navarro",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 74,
+            "pase": 80,
+            "regate": 77,
+            "defensa": 91,
+            "fisico": 90,
+            "arquero": 34
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 0.9,
+            "piel": 4,
+            "colorPelo": 1,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Maximiliano Rojas",
+          "camiseta": "Rojas",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 75,
+            "pase": 76,
+            "regate": 75,
+            "defensa": 84,
+            "fisico": 82,
+            "arquero": 32
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 0.99,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Joaquín Huenchumilla",
+          "camiseta": "Huenchumilla",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 84,
+            "tiro": 66,
+            "pase": 78,
+            "regate": 71,
+            "defensa": 81,
+            "fisico": 81,
+            "arquero": 32
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.02,
+            "piel": 7,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Martín Leiva",
+          "camiseta": "Leiva",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 64,
+            "pase": 82,
+            "regate": 71,
+            "defensa": 87,
+            "fisico": 90,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 0.9,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Leandro Bustos",
+          "camiseta": "Bustos",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 57,
+            "pase": 73,
+            "regate": 73,
+            "defensa": 83,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 0.95,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Bastián Molina",
+          "camiseta": "Molina",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 61,
+            "pase": 68,
+            "regate": 60,
+            "defensa": 76,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.92,
+            "piel": 2,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Maximiliano Catrileo",
+          "camiseta": "Catrileo",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 83,
+            "tiro": 77,
+            "pase": 80,
+            "regate": 86,
+            "defensa": 74,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 1.08,
+            "piel": 2,
+            "colorPelo": 3,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Martín Fernández",
+          "camiseta": "Fernández",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 79,
+            "pase": 87,
+            "regate": 89,
+            "defensa": 80,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 0.94,
+            "piel": 4,
+            "colorPelo": 6,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Felipe Nahuelpán",
+          "camiseta": "Nahuelpán",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 86,
+            "tiro": 74,
+            "pase": 93,
+            "regate": 92,
+            "defensa": 85,
+            "fisico": 81,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.08,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Patricio Cárdenas",
+          "camiseta": "Cárdenas",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 74,
+            "pase": 86,
+            "regate": 88,
+            "defensa": 71,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 0.99,
+            "piel": 1,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ramiro Aguilera",
+          "camiseta": "Aguilera",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 76,
+            "pase": 84,
+            "regate": 75,
+            "defensa": 69,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 1.11,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gabriel Espinoza",
+          "camiseta": "Espinoza",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 76,
+            "pase": 79,
+            "regate": 80,
+            "defensa": 76,
+            "fisico": 85,
+            "arquero": 31
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.04,
+            "piel": 1,
+            "colorPelo": 0,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Ariel Cáceres",
+          "camiseta": "Cáceres",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 81,
+            "tiro": 95,
+            "pase": 82,
+            "regate": 86,
+            "defensa": 58,
+            "fisico": 81,
+            "arquero": 32
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.04,
+            "piel": 3,
+            "colorPelo": 6,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gaspar Morales",
+          "camiseta": "Morales",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 91,
+            "tiro": 89,
+            "pase": 75,
+            "regate": 93,
+            "defensa": 66,
+            "fisico": 86,
+            "arquero": 34
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 1.15,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Gabriel Molina",
+          "camiseta": "Molina",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 85,
+            "pase": 77,
+            "regate": 83,
+            "defensa": 53,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 0.92,
+            "piel": 0,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Felipe Hernández",
+          "camiseta": "Hernández",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 78,
+            "pase": 74,
+            "regate": 81,
+            "defensa": 60,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 0.96,
+            "piel": 5,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "ucatolica",
+      "nombre": "Universidad Católica",
+      "corto": "U. Católica",
+      "iniciales": "UC",
+      "ciudad": "Santiago (Las Condes)",
+      "estadio": "Claro Arena",
+      "nivel": 80,
+      "colores": {
+        "titular": {
+          "camiseta": "#f7f7f7",
+          "short": "#0b2a6b",
+          "medias": "#f7f7f7",
+          "detalle": "#0b2a6b",
+          "diseno": "banda",
+          "detalle2": "#d52b1e"
+        },
+        "alternativa": {
+          "camiseta": "#0b2a6b",
+          "short": "#0b2a6b",
+          "medias": "#0b2a6b",
+          "detalle": "#f7f7f7",
+          "diseno": "banda",
+          "detalle2": "#d52b1e"
+        },
+        "emblema": [
+          "#f7f7f7",
+          "#0b2a6b",
+          "#d52b1e"
+        ]
+      },
+      "emblema": {
+        "forma": "escudo",
+        "patron": "banda"
+      },
+      "jugadores": [
+        {
+          "nombre": "Martín Martínez",
+          "camiseta": "Martínez",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 55,
+            "pase": 68,
+            "regate": 61,
+            "defensa": 62,
+            "fisico": 80,
+            "arquero": 89
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 0.99,
+            "piel": 2,
+            "colorPelo": 7,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Jorge Tapia",
+          "camiseta": "Tapia",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 54,
+            "tiro": 50,
+            "pase": 57,
+            "regate": 51,
+            "defensa": 46,
+            "fisico": 77,
+            "arquero": 84
+          },
+          "apariencia": {
+            "altura": 1.93,
+            "contextura": 0.95,
+            "piel": 4,
+            "colorPelo": 1,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Javier Escobar",
+          "camiseta": "Escobar",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 66,
+            "pase": 84,
+            "regate": 76,
+            "defensa": 94,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.05,
+            "piel": 4,
+            "colorPelo": 0,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Agustín Miranda",
+          "camiseta": "Miranda",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 83,
+            "tiro": 63,
+            "pase": 82,
+            "regate": 74,
+            "defensa": 84,
+            "fisico": 93,
+            "arquero": 32
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 0.99,
+            "piel": 1,
+            "colorPelo": 0,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gaspar Contreras",
+          "camiseta": "Contreras",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 85,
+            "tiro": 64,
+            "pase": 82,
+            "regate": 72,
+            "defensa": 83,
+            "fisico": 91,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.08,
+            "piel": 2,
+            "colorPelo": 5,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Yerko Alarcón",
+          "camiseta": "Alarcón",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 70,
+            "pase": 77,
+            "regate": 66,
+            "defensa": 82,
+            "fisico": 84,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 1.07,
+            "piel": 6,
+            "colorPelo": 2,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Francisco Sepúlveda",
+          "camiseta": "Sepúlveda",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 67,
+            "pase": 72,
+            "regate": 62,
+            "defensa": 86,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 0.98,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ariel Flores",
+          "camiseta": "Flores",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 59,
+            "pase": 76,
+            "regate": 66,
+            "defensa": 86,
+            "fisico": 83,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.73,
+            "contextura": 0.97,
+            "piel": 5,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Emilio Aguilera",
+          "camiseta": "Aguilera",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 82,
+            "pase": 95,
+            "regate": 87,
+            "defensa": 76,
+            "fisico": 88,
+            "arquero": 36
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 1.08,
+            "piel": 6,
+            "colorPelo": 4,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Franco Díaz",
+          "camiseta": "Díaz",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 82,
+            "pase": 87,
+            "regate": 84,
+            "defensa": 69,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.14,
+            "piel": 6,
+            "colorPelo": 6,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Kevin Vidal",
+          "camiseta": "Vidal",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 73,
+            "pase": 88,
+            "regate": 79,
+            "defensa": 70,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 0.97,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Nicolás Cárdenas",
+          "camiseta": "Cárdenas",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 81,
+            "pase": 89,
+            "regate": 79,
+            "defensa": 79,
+            "fisico": 84,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 0.91,
+            "piel": 3,
+            "colorPelo": 6,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Cristián Rodríguez",
+          "camiseta": "Rodríguez",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 71,
+            "pase": 80,
+            "regate": 76,
+            "defensa": 73,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.69,
+            "contextura": 0.93,
+            "piel": 6,
+            "colorPelo": 6,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Kevin Guzmán",
+          "camiseta": "Guzmán",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 74,
+            "pase": 79,
+            "regate": 74,
+            "defensa": 66,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.13,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Tomás López",
+          "camiseta": "López",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 87,
+            "tiro": 80,
+            "pase": 78,
+            "regate": 80,
+            "defensa": 64,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 0.92,
+            "piel": 0,
+            "colorPelo": 0,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Renato Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 84,
+            "pase": 76,
+            "regate": 83,
+            "defensa": 52,
+            "fisico": 83,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 1.13,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Branco Valenzuela",
+          "camiseta": "Valenzuela",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 84,
+            "tiro": 82,
+            "pase": 66,
+            "regate": 73,
+            "defensa": 50,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 1.14,
+            "piel": 6,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Tomás Sánchez",
+          "camiseta": "Sánchez",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 82,
+            "pase": 71,
+            "regate": 83,
+            "defensa": 62,
+            "fisico": 84,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 1.02,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "coquimbo",
+      "nombre": "Coquimbo Unido",
+      "corto": "Coquimbo",
+      "iniciales": "CU",
+      "ciudad": "Coquimbo",
+      "estadio": "Estadio Francisco Sánchez Rumoroso",
+      "nivel": 79,
+      "colores": {
+        "titular": {
+          "camiseta": "#f4c20d",
+          "short": "#111111",
+          "medias": "#f4c20d",
+          "detalle": "#111111",
+          "diseno": "franjasFinas"
+        },
+        "alternativa": {
+          "camiseta": "#111111",
+          "short": "#111111",
+          "medias": "#111111",
+          "detalle": "#f4c20d",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#f4c20d",
+          "#111111",
+          "#111111"
+        ]
+      },
+      "emblema": {
+        "forma": "escudo",
+        "patron": "franjas"
+      },
+      "jugadores": [
+        {
+          "nombre": "Andrés Escobar",
+          "camiseta": "Escobar",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 55,
+            "tiro": 54,
+            "pase": 72,
+            "regate": 47,
+            "defensa": 53,
+            "fisico": 76,
+            "arquero": 81
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 1.04,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Damián Fernández",
+          "camiseta": "Fernández",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 51,
+            "tiro": 46,
+            "pase": 62,
+            "regate": 45,
+            "defensa": 52,
+            "fisico": 67,
+            "arquero": 78
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.02,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Álvaro Toro",
+          "camiseta": "Toro",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 83,
+            "tiro": 65,
+            "pase": 79,
+            "regate": 77,
+            "defensa": 87,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 0.98,
+            "piel": 1,
+            "colorPelo": 3,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Enzo Pérez",
+          "camiseta": "Pérez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 65,
+            "pase": 73,
+            "regate": 71,
+            "defensa": 87,
+            "fisico": 90,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.7,
+            "contextura": 1,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Maximiliano Castro",
+          "camiseta": "Castro",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 73,
+            "pase": 74,
+            "regate": 69,
+            "defensa": 86,
+            "fisico": 81,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.02,
+            "piel": 4,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Cristián Gallardo",
+          "camiseta": "Gallardo",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 74,
+            "pase": 80,
+            "regate": 80,
+            "defensa": 82,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.05,
+            "piel": 6,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Marcelo Molina",
+          "camiseta": "Molina",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 57,
+            "pase": 75,
+            "regate": 64,
+            "defensa": 77,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 0.97,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Luciano Quiroz",
+          "camiseta": "Quiroz",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 60,
+            "pase": 74,
+            "regate": 69,
+            "defensa": 82,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 1.08,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Cristián Figueroa",
+          "camiseta": "Figueroa",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 81,
+            "tiro": 77,
+            "pase": 88,
+            "regate": 74,
+            "defensa": 76,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.7,
+            "contextura": 1.06,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Gabriel Huenchumilla",
+          "camiseta": "Huenchumilla",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 72,
+            "pase": 79,
+            "regate": 87,
+            "defensa": 71,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.05,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Benjamín Lagos",
+          "camiseta": "Lagos",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 82,
+            "pase": 82,
+            "regate": 79,
+            "defensa": 75,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.05,
+            "piel": 2,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gaspar González",
+          "camiseta": "González",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 77,
+            "pase": 84,
+            "regate": 79,
+            "defensa": 77,
+            "fisico": 81,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 0.92,
+            "piel": 0,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Gonzalo Herrera",
+          "camiseta": "Herrera",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 77,
+            "pase": 84,
+            "regate": 82,
+            "defensa": 75,
+            "fisico": 75,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.1,
+            "piel": 2,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ramiro Rodríguez",
+          "camiseta": "Rodríguez",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 65,
+            "pase": 83,
+            "regate": 81,
+            "defensa": 63,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.04,
+            "piel": 4,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Javier Catrileo",
+          "camiseta": "Catrileo",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 85,
+            "tiro": 80,
+            "pase": 72,
+            "regate": 89,
+            "defensa": 53,
+            "fisico": 81,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 1.12,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Joaquín Hernández",
+          "camiseta": "Hernández",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 87,
+            "tiro": 89,
+            "pase": 79,
+            "regate": 86,
+            "defensa": 58,
+            "fisico": 87,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.04,
+            "piel": 1,
+            "colorPelo": 3,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Benjamín Millán",
+          "camiseta": "Millán",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 76,
+            "pase": 77,
+            "regate": 77,
+            "defensa": 49,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.14,
+            "piel": 1,
+            "colorPelo": 3,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Camilo Henríquez",
+          "camiseta": "Henríquez",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 83,
+            "pase": 68,
+            "regate": 80,
+            "defensa": 47,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 0.92,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "ohiggins",
+      "nombre": "O'Higgins",
+      "corto": "O'Higgins",
+      "iniciales": "OH",
+      "ciudad": "Rancagua",
+      "estadio": "Estadio El Teniente",
+      "nivel": 76,
+      "colores": {
+        "titular": {
+          "camiseta": "#5ab4e5",
+          "short": "#f7f7f7",
+          "medias": "#5ab4e5",
+          "detalle": "#f7f7f7",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#5ab4e5",
+          "medias": "#f7f7f7",
+          "detalle": "#5ab4e5",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#5ab4e5",
+          "#f7f7f7",
+          "#1b3b5a"
+        ]
+      },
+      "emblema": {
+        "forma": "escudoRecto",
+        "patron": "mitad"
+      },
+      "jugadores": [
+        {
+          "nombre": "Branco Vergara",
+          "camiseta": "Vergara",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 44,
+            "pase": 67,
+            "regate": 54,
+            "defensa": 52,
+            "fisico": 83,
+            "arquero": 87
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 1.1,
+            "piel": 4,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Alexis Quidel",
+          "camiseta": "Quidel",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 57,
+            "tiro": 47,
+            "pase": 57,
+            "regate": 41,
+            "defensa": 44,
+            "fisico": 78,
+            "arquero": 85
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.08,
+            "piel": 1,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Brayan Gómez",
+          "camiseta": "Gómez",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 61,
+            "pase": 80,
+            "regate": 69,
+            "defensa": 80,
+            "fisico": 83,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 1.08,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Rafael Garrido",
+          "camiseta": "Garrido",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 62,
+            "pase": 76,
+            "regate": 72,
+            "defensa": 76,
+            "fisico": 83,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 1.03,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Emilio Pizarro",
+          "camiseta": "Pizarro",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 56,
+            "pase": 75,
+            "regate": 62,
+            "defensa": 74,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 1.04,
+            "piel": 4,
+            "colorPelo": 3,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Patricio Vergara",
+          "camiseta": "Vergara",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 84,
+            "tiro": 63,
+            "pase": 83,
+            "regate": 66,
+            "defensa": 83,
+            "fisico": 86,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.01,
+            "piel": 5,
+            "colorPelo": 3,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Benjamín Lagos",
+          "camiseta": "Lagos",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 54,
+            "pase": 70,
+            "regate": 63,
+            "defensa": 74,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 0.95,
+            "piel": 6,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Javier Ortiz",
+          "camiseta": "Ortiz",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 54,
+            "pase": 74,
+            "regate": 65,
+            "defensa": 78,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 0.96,
+            "piel": 1,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Brayan Nahuelpán",
+          "camiseta": "Nahuelpán",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 71,
+            "pase": 92,
+            "regate": 81,
+            "defensa": 80,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 0.96,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Sebastián Millán",
+          "camiseta": "Millán",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 83,
+            "tiro": 72,
+            "pase": 81,
+            "regate": 89,
+            "defensa": 67,
+            "fisico": 84,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 0.94,
+            "piel": 4,
+            "colorPelo": 2,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Elías Vega",
+          "camiseta": "Vega",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 73,
+            "pase": 88,
+            "regate": 75,
+            "defensa": 75,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 0.97,
+            "piel": 1,
+            "colorPelo": 2,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Brayan Díaz",
+          "camiseta": "Díaz",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 78,
+            "pase": 80,
+            "regate": 89,
+            "defensa": 79,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 0.91,
+            "piel": 4,
+            "colorPelo": 4,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Esteban Espinoza",
+          "camiseta": "Espinoza",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 67,
+            "pase": 74,
+            "regate": 75,
+            "defensa": 65,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 1.02,
+            "piel": 0,
+            "colorPelo": 4,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Enzo Millán",
+          "camiseta": "Millán",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 67,
+            "tiro": 74,
+            "pase": 70,
+            "regate": 70,
+            "defensa": 63,
+            "fisico": 63,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 0.93,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ariel Leiva",
+          "camiseta": "Leiva",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 80,
+            "pase": 78,
+            "regate": 77,
+            "defensa": 59,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 0.94,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Hugo Flores",
+          "camiseta": "Flores",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 84,
+            "pase": 76,
+            "regate": 80,
+            "defensa": 57,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 1.08,
+            "piel": 0,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Alexis Silva",
+          "camiseta": "Silva",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 74,
+            "pase": 68,
+            "regate": 77,
+            "defensa": 45,
+            "fisico": 68,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.15,
+            "piel": 0,
+            "colorPelo": 5,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Martín Sandoval",
+          "camiseta": "Sandoval",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 82,
+            "pase": 66,
+            "regate": 80,
+            "defensa": 48,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "audax",
+      "nombre": "Audax Italiano",
+      "corto": "Audax",
+      "iniciales": "AI",
+      "ciudad": "Santiago (La Florida)",
+      "estadio": "Estadio Bicentenario de La Florida",
+      "nivel": 73,
+      "colores": {
+        "titular": {
+          "camiseta": "#11823b",
+          "short": "#f7f7f7",
+          "medias": "#11823b",
+          "detalle": "#f7f7f7",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#11823b",
+          "medias": "#f7f7f7",
+          "detalle": "#11823b",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#11823b",
+          "#f7f7f7",
+          "#d52b1e"
+        ]
+      },
+      "emblema": {
+        "forma": "escudo",
+        "patron": "banda"
+      },
+      "jugadores": [
+        {
+          "nombre": "Mauricio Aravena",
+          "camiseta": "Aravena",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 54,
+            "tiro": 39,
+            "pase": 55,
+            "regate": 47,
+            "defensa": 42,
+            "fisico": 73,
+            "arquero": 78
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.12,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bruno Castro",
+          "camiseta": "Castro",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 45,
+            "tiro": 35,
+            "pase": 60,
+            "regate": 44,
+            "defensa": 43,
+            "fisico": 75,
+            "arquero": 82
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 0.92,
+            "piel": 1,
+            "colorPelo": 7,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Damián Escobar",
+          "camiseta": "Escobar",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 59,
+            "pase": 79,
+            "regate": 73,
+            "defensa": 77,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.73,
+            "contextura": 1.01,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Yerko Torres",
+          "camiseta": "Torres",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 63,
+            "pase": 67,
+            "regate": 67,
+            "defensa": 76,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.03,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Martín Lagos",
+          "camiseta": "Lagos",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 64,
+            "pase": 69,
+            "regate": 69,
+            "defensa": 82,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 0.92,
+            "piel": 7,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Cristóbal Araya",
+          "camiseta": "Araya",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 57,
+            "pase": 79,
+            "regate": 66,
+            "defensa": 80,
+            "fisico": 85,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 1.03,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Maximiliano Díaz",
+          "camiseta": "Díaz",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 58,
+            "pase": 57,
+            "regate": 62,
+            "defensa": 72,
+            "fisico": 75,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 1.13,
+            "piel": 4,
+            "colorPelo": 4,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Alexis Lagos",
+          "camiseta": "Lagos",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 61,
+            "pase": 59,
+            "regate": 53,
+            "defensa": 71,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 1.08,
+            "piel": 7,
+            "colorPelo": 7,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Byron Torres",
+          "camiseta": "Torres",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 72,
+            "pase": 83,
+            "regate": 75,
+            "defensa": 65,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.08,
+            "piel": 1,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Pablo Quiroz",
+          "camiseta": "Quiroz",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 77,
+            "pase": 80,
+            "regate": 70,
+            "defensa": 71,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 0.99,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Ramiro Carrasco",
+          "camiseta": "Carrasco",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 72,
+            "pase": 83,
+            "regate": 84,
+            "defensa": 69,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.7,
+            "contextura": 1.12,
+            "piel": 0,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Leandro Tapia",
+          "camiseta": "Tapia",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 77,
+            "pase": 87,
+            "regate": 79,
+            "defensa": 67,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.7,
+            "contextura": 1.14,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bastián Espinoza",
+          "camiseta": "Espinoza",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 62,
+            "tiro": 67,
+            "pase": 68,
+            "regate": 67,
+            "defensa": 67,
+            "fisico": 63,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 0.92,
+            "piel": 6,
+            "colorPelo": 6,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Elías Orellana",
+          "camiseta": "Orellana",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 63,
+            "pase": 73,
+            "regate": 77,
+            "defensa": 65,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.07,
+            "piel": 7,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bruno Reyes",
+          "camiseta": "Reyes",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 80,
+            "pase": 69,
+            "regate": 76,
+            "defensa": 54,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.03,
+            "piel": 4,
+            "colorPelo": 2,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ramiro Salinas",
+          "camiseta": "Salinas",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 86,
+            "pase": 78,
+            "regate": 75,
+            "defensa": 50,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.06,
+            "piel": 4,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Camilo Gallardo",
+          "camiseta": "Gallardo",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 74,
+            "pase": 58,
+            "regate": 75,
+            "defensa": 41,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 0.9,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Fernando Salazar",
+          "camiseta": "Salazar",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 81,
+            "pase": 63,
+            "regate": 73,
+            "defensa": 42,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 1.04,
+            "piel": 2,
+            "colorPelo": 2,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "palestino",
+      "nombre": "Palestino",
+      "corto": "Palestino",
+      "iniciales": "CDP",
+      "ciudad": "Santiago (La Cisterna)",
+      "estadio": "Estadio Municipal de La Cisterna",
+      "nivel": 75,
+      "colores": {
+        "titular": {
+          "camiseta": "#f7f7f7",
+          "short": "#111111",
+          "medias": "#d52b1e",
+          "detalle": "#d52b1e",
+          "diseno": "centro",
+          "detalle2": "#11823b"
+        },
+        "alternativa": {
+          "camiseta": "#d52b1e",
+          "short": "#d52b1e",
+          "medias": "#d52b1e",
+          "detalle": "#11823b",
+          "diseno": "centro",
+          "detalle2": "#f7f7f7"
+        },
+        "emblema": [
+          "#11823b",
+          "#d52b1e",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "diamante",
+        "patron": "mitad"
+      },
+      "jugadores": [
+        {
+          "nombre": "Jean Mella",
+          "camiseta": "Mella",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 50,
+            "pase": 73,
+            "regate": 51,
+            "defensa": 57,
+            "fisico": 72,
+            "arquero": 79
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 0.93,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Diego Sepúlveda",
+          "camiseta": "Sepúlveda",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 59,
+            "tiro": 47,
+            "pase": 67,
+            "regate": 46,
+            "defensa": 52,
+            "fisico": 76,
+            "arquero": 71
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1,
+            "piel": 0,
+            "colorPelo": 3,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Lucas López",
+          "camiseta": "López",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 55,
+            "pase": 66,
+            "regate": 67,
+            "defensa": 77,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 1.05,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Francisco Quiroz",
+          "camiseta": "Quiroz",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 55,
+            "pase": 72,
+            "regate": 62,
+            "defensa": 87,
+            "fisico": 85,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 0.92,
+            "piel": 6,
+            "colorPelo": 3,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Martín Campos",
+          "camiseta": "Campos",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 62,
+            "pase": 71,
+            "regate": 71,
+            "defensa": 86,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.07,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bruno Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 70,
+            "pase": 68,
+            "regate": 65,
+            "defensa": 81,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.11,
+            "piel": 6,
+            "colorPelo": 7,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Kevin Rivera",
+          "camiseta": "Rivera",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 55,
+            "pase": 63,
+            "regate": 63,
+            "defensa": 74,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.05,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Jorge Quidel",
+          "camiseta": "Quidel",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 59,
+            "pase": 62,
+            "regate": 63,
+            "defensa": 80,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 0.98,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Esteban Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 80,
+            "pase": 83,
+            "regate": 85,
+            "defensa": 80,
+            "fisico": 84,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 1.11,
+            "piel": 4,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Rodrigo Escobar",
+          "camiseta": "Escobar",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 66,
+            "pase": 79,
+            "regate": 78,
+            "defensa": 72,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.73,
+            "contextura": 1.11,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Francisco Salazar",
+          "camiseta": "Salazar",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 64,
+            "pase": 79,
+            "regate": 73,
+            "defensa": 74,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 1.14,
+            "piel": 4,
+            "colorPelo": 4,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Kevin Tapia",
+          "camiseta": "Tapia",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 77,
+            "pase": 78,
+            "regate": 80,
+            "defensa": 73,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1,
+            "piel": 7,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Elías Sánchez",
+          "camiseta": "Sánchez",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 65,
+            "pase": 70,
+            "regate": 68,
+            "defensa": 63,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.01,
+            "piel": 6,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Vicente Bravo",
+          "camiseta": "Bravo",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 74,
+            "pase": 73,
+            "regate": 81,
+            "defensa": 64,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.9,
+            "piel": 7,
+            "colorPelo": 1,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Javier Riquelme",
+          "camiseta": "Riquelme",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 77,
+            "pase": 66,
+            "regate": 78,
+            "defensa": 58,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 1.12,
+            "piel": 4,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gabriel Ulloa",
+          "camiseta": "Ulloa",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 83,
+            "tiro": 75,
+            "pase": 76,
+            "regate": 72,
+            "defensa": 49,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.7,
+            "contextura": 0.97,
+            "piel": 5,
+            "colorPelo": 5,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Emilio Vergara",
+          "camiseta": "Vergara",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 85,
+            "pase": 72,
+            "regate": 73,
+            "defensa": 48,
+            "fisico": 68,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.11,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Francisco Parra",
+          "camiseta": "Parra",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 71,
+            "pase": 72,
+            "regate": 71,
+            "defensa": 52,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 1.05,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "cobresal",
+      "nombre": "Cobresal",
+      "corto": "Cobresal",
+      "iniciales": "CS",
+      "ciudad": "El Salvador",
+      "estadio": "Estadio El Cobre",
+      "nivel": 71,
+      "colores": {
+        "titular": {
+          "camiseta": "#f26a1b",
+          "short": "#f26a1b",
+          "medias": "#f26a1b",
+          "detalle": "#f7f7f7",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#f7f7f7",
+          "medias": "#f7f7f7",
+          "detalle": "#f26a1b",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#f26a1b",
+          "#f7f7f7",
+          "#3b2010"
+        ]
+      },
+      "emblema": {
+        "forma": "circulo",
+        "patron": "aro"
+      },
+      "jugadores": [
+        {
+          "nombre": "Mauricio López",
+          "camiseta": "López",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 50,
+            "tiro": 38,
+            "pase": 61,
+            "regate": 41,
+            "defensa": 40,
+            "fisico": 73,
+            "arquero": 73
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.07,
+            "piel": 5,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Javier Vergara",
+          "camiseta": "Vergara",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 46,
+            "tiro": 33,
+            "pase": 59,
+            "regate": 40,
+            "defensa": 38,
+            "fisico": 64,
+            "arquero": 78
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 0.96,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Eduardo Vera",
+          "camiseta": "Vera",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 62,
+            "pase": 73,
+            "regate": 68,
+            "defensa": 73,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.09,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Francisco Salinas",
+          "camiseta": "Salinas",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 58,
+            "pase": 69,
+            "regate": 64,
+            "defensa": 73,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.09,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Claudio Salinas",
+          "camiseta": "Salinas",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 67,
+            "pase": 76,
+            "regate": 59,
+            "defensa": 77,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 1.01,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gonzalo Painemal",
+          "camiseta": "Painemal",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 55,
+            "pase": 70,
+            "regate": 65,
+            "defensa": 75,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 0.98,
+            "piel": 2,
+            "colorPelo": 4,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Byron Flores",
+          "camiseta": "Flores",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 67,
+            "tiro": 49,
+            "pase": 65,
+            "regate": 54,
+            "defensa": 73,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.11,
+            "piel": 7,
+            "colorPelo": 6,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Eduardo Millán",
+          "camiseta": "Millán",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 49,
+            "pase": 63,
+            "regate": 52,
+            "defensa": 76,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.08,
+            "piel": 5,
+            "colorPelo": 0,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Álvaro Vega",
+          "camiseta": "Vega",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 63,
+            "pase": 73,
+            "regate": 80,
+            "defensa": 63,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 1.08,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Rodrigo Martínez",
+          "camiseta": "Martínez",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 66,
+            "pase": 73,
+            "regate": 74,
+            "defensa": 75,
+            "fisico": 75,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 0.95,
+            "piel": 0,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Simón Romero",
+          "camiseta": "Romero",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 65,
+            "pase": 74,
+            "regate": 73,
+            "defensa": 70,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 0.93,
+            "piel": 7,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Luciano Salinas",
+          "camiseta": "Salinas",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 67,
+            "pase": 75,
+            "regate": 73,
+            "defensa": 67,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 0.91,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Cristóbal Yáñez",
+          "camiseta": "Yáñez",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 58,
+            "pase": 69,
+            "regate": 68,
+            "defensa": 65,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.06,
+            "piel": 1,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Thiago Sandoval",
+          "camiseta": "Sandoval",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 63,
+            "tiro": 56,
+            "pase": 78,
+            "regate": 65,
+            "defensa": 54,
+            "fisico": 62,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.09,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Mauricio Núñez",
+          "camiseta": "Núñez",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 79,
+            "pase": 73,
+            "regate": 75,
+            "defensa": 50,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.06,
+            "piel": 1,
+            "colorPelo": 2,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gaspar Aguilera",
+          "camiseta": "Aguilera",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 81,
+            "pase": 74,
+            "regate": 83,
+            "defensa": 57,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 1.1,
+            "piel": 2,
+            "colorPelo": 2,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Simón Cáceres",
+          "camiseta": "Cáceres",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 66,
+            "pase": 58,
+            "regate": 76,
+            "defensa": 43,
+            "fisico": 60,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 0.91,
+            "piel": 2,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Matías González",
+          "camiseta": "González",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 78,
+            "pase": 69,
+            "regate": 67,
+            "defensa": 41,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 0.91,
+            "piel": 6,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "huachipato",
+      "nombre": "Huachipato",
+      "corto": "Huachipato",
+      "iniciales": "CDH",
+      "ciudad": "Talcahuano",
+      "estadio": "Estadio Huachipato-CAP Acero",
+      "nivel": 73,
+      "colores": {
+        "titular": {
+          "camiseta": "#1a3d8f",
+          "short": "#111111",
+          "medias": "#111111",
+          "detalle": "#111111",
+          "diseno": "franjas"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#f7f7f7",
+          "medias": "#f7f7f7",
+          "detalle": "#1a3d8f",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#1a3d8f",
+          "#111111",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "escudoRecto",
+        "patron": "franjas"
+      },
+      "jugadores": [
+        {
+          "nombre": "Branco Ramírez",
+          "camiseta": "Ramírez",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 57,
+            "tiro": 49,
+            "pase": 59,
+            "regate": 52,
+            "defensa": 55,
+            "fisico": 73,
+            "arquero": 73
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 0.95,
+            "piel": 1,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Cristián Torres",
+          "camiseta": "Torres",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 52,
+            "tiro": 43,
+            "pase": 60,
+            "regate": 43,
+            "defensa": 42,
+            "fisico": 68,
+            "arquero": 69
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 0.92,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Leandro Ortiz",
+          "camiseta": "Ortiz",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 56,
+            "pase": 63,
+            "regate": 67,
+            "defensa": 81,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.12,
+            "piel": 4,
+            "colorPelo": 7,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Fernando Yáñez",
+          "camiseta": "Yáñez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 58,
+            "pase": 64,
+            "regate": 67,
+            "defensa": 83,
+            "fisico": 83,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.08,
+            "piel": 7,
+            "colorPelo": 6,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Emilio Riquelme",
+          "camiseta": "Riquelme",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 56,
+            "pase": 66,
+            "regate": 64,
+            "defensa": 83,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.91,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Dylan Catrileo",
+          "camiseta": "Catrileo",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 65,
+            "pase": 71,
+            "regate": 66,
+            "defensa": 77,
+            "fisico": 82,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1,
+            "piel": 4,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Diego Contreras",
+          "camiseta": "Contreras",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 63,
+            "tiro": 54,
+            "pase": 59,
+            "regate": 58,
+            "defensa": 70,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 0.93,
+            "piel": 4,
+            "colorPelo": 7,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Kevin Contreras",
+          "camiseta": "Contreras",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 57,
+            "pase": 63,
+            "regate": 55,
+            "defensa": 65,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 0.98,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Tomás Cárdenas",
+          "camiseta": "Cárdenas",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 69,
+            "pase": 75,
+            "regate": 84,
+            "defensa": 70,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 1.06,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ignacio Ulloa",
+          "camiseta": "Ulloa",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 79,
+            "pase": 80,
+            "regate": 83,
+            "defensa": 68,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.73,
+            "contextura": 0.95,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Ramiro Huenchumilla",
+          "camiseta": "Huenchumilla",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 69,
+            "pase": 75,
+            "regate": 79,
+            "defensa": 61,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 0.96,
+            "piel": 6,
+            "colorPelo": 3,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Rodrigo Millán",
+          "camiseta": "Millán",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 79,
+            "pase": 87,
+            "regate": 83,
+            "defensa": 71,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.07,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Cristóbal Rojas",
+          "camiseta": "Rojas",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 70,
+            "pase": 78,
+            "regate": 75,
+            "defensa": 58,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 1.05,
+            "piel": 1,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ignacio Torres",
+          "camiseta": "Torres",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 67,
+            "tiro": 72,
+            "pase": 75,
+            "regate": 66,
+            "defensa": 66,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 1.09,
+            "piel": 3,
+            "colorPelo": 6,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Álvaro Poblete",
+          "camiseta": "Poblete",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 84,
+            "tiro": 79,
+            "pase": 78,
+            "regate": 76,
+            "defensa": 57,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 0.97,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Ariel Huenchumilla",
+          "camiseta": "Huenchumilla",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 85,
+            "tiro": 87,
+            "pase": 66,
+            "regate": 81,
+            "defensa": 56,
+            "fisico": 75,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.06,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Javier Quiroz",
+          "camiseta": "Quiroz",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 72,
+            "pase": 73,
+            "regate": 80,
+            "defensa": 55,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 0.94,
+            "piel": 2,
+            "colorPelo": 2,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Brayan Mella",
+          "camiseta": "Mella",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 75,
+            "pase": 67,
+            "regate": 64,
+            "defensa": 42,
+            "fisico": 68,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 0.93,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "nublense",
+      "nombre": "Ñublense",
+      "corto": "Ñublense",
+      "iniciales": "ÑUB",
+      "ciudad": "Chillán",
+      "estadio": "Estadio Municipal Nelson Oyarzún",
+      "nivel": 71,
+      "colores": {
+        "titular": {
+          "camiseta": "#c8102e",
+          "short": "#c8102e",
+          "medias": "#c8102e",
+          "detalle": "#111111",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#f7f7f7",
+          "medias": "#f7f7f7",
+          "detalle": "#c8102e",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#c8102e",
+          "#111111",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "escudo",
+        "patron": "diagonal"
+      },
+      "jugadores": [
+        {
+          "nombre": "Renato Mella",
+          "camiseta": "Mella",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 51,
+            "tiro": 47,
+            "pase": 57,
+            "regate": 38,
+            "defensa": 43,
+            "fisico": 74,
+            "arquero": 69
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 0.99,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Fernando Vásquez",
+          "camiseta": "Vásquez",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 49,
+            "tiro": 32,
+            "pase": 57,
+            "regate": 32,
+            "defensa": 36,
+            "fisico": 72,
+            "arquero": 66
+          },
+          "apariencia": {
+            "altura": 1.91,
+            "contextura": 1.01,
+            "piel": 2,
+            "colorPelo": 6,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Benjamín Painemal",
+          "camiseta": "Painemal",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 56,
+            "pase": 78,
+            "regate": 65,
+            "defensa": 86,
+            "fisico": 81,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.12,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Fernando Henríquez",
+          "camiseta": "Henríquez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 52,
+            "pase": 62,
+            "regate": 57,
+            "defensa": 73,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 0.98,
+            "piel": 5,
+            "colorPelo": 1,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Cristóbal Díaz",
+          "camiseta": "Díaz",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 67,
+            "tiro": 52,
+            "pase": 70,
+            "regate": 60,
+            "defensa": 72,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 1.09,
+            "piel": 4,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Dylan Tapia",
+          "camiseta": "Tapia",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 58,
+            "pase": 72,
+            "regate": 64,
+            "defensa": 77,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 1.06,
+            "piel": 2,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Cristián Hernández",
+          "camiseta": "Hernández",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 47,
+            "pase": 63,
+            "regate": 57,
+            "defensa": 74,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.14,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Patricio Figueroa",
+          "camiseta": "Figueroa",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 52,
+            "pase": 67,
+            "regate": 66,
+            "defensa": 68,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 1.11,
+            "piel": 0,
+            "colorPelo": 1,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Franco Tapia",
+          "camiseta": "Tapia",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 69,
+            "pase": 86,
+            "regate": 79,
+            "defensa": 64,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.93,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Fernando Vera",
+          "camiseta": "Vera",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 66,
+            "pase": 82,
+            "regate": 73,
+            "defensa": 67,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.06,
+            "piel": 4,
+            "colorPelo": 4,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Maximiliano González",
+          "camiseta": "González",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 75,
+            "pase": 85,
+            "regate": 72,
+            "defensa": 72,
+            "fisico": 68,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 1.07,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Nicolás Pérez",
+          "camiseta": "Pérez",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 72,
+            "pase": 76,
+            "regate": 67,
+            "defensa": 71,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.12,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Mauricio Catrileo",
+          "camiseta": "Catrileo",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 63,
+            "pase": 66,
+            "regate": 65,
+            "defensa": 63,
+            "fisico": 59,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.1,
+            "piel": 1,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Cristián López",
+          "camiseta": "López",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 63,
+            "pase": 77,
+            "regate": 74,
+            "defensa": 56,
+            "fisico": 59,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 1.14,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Jorge Quidel",
+          "camiseta": "Quidel",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 79,
+            "tiro": 74,
+            "pase": 74,
+            "regate": 73,
+            "defensa": 54,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 1,
+            "piel": 1,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Matías González",
+          "camiseta": "González",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 78,
+            "pase": 63,
+            "regate": 77,
+            "defensa": 55,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.07,
+            "piel": 2,
+            "colorPelo": 3,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ramiro Castro",
+          "camiseta": "Castro",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 69,
+            "pase": 58,
+            "regate": 69,
+            "defensa": 52,
+            "fisico": 64,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.03,
+            "piel": 2,
+            "colorPelo": 5,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Pablo Fuentes",
+          "camiseta": "Fuentes",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 71,
+            "pase": 66,
+            "regate": 69,
+            "defensa": 43,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 1,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "limache",
+      "nombre": "Deportes Limache",
+      "corto": "Limache",
+      "iniciales": "DL",
+      "ciudad": "Limache",
+      "estadio": "Estadio Municipal Ángel Navarrete Candia",
+      "nivel": 68,
+      "colores": {
+        "titular": {
+          "camiseta": "#d2232a",
+          "short": "#f7f7f7",
+          "medias": "#d2232a",
+          "detalle": "#f7f7f7",
+          "diseno": "diagonal"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#d2232a",
+          "medias": "#f7f7f7",
+          "detalle": "#d2232a",
+          "diseno": "diagonal"
+        },
+        "emblema": [
+          "#d2232a",
+          "#f7f7f7",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "circulo",
+        "patron": "banda"
+      },
+      "jugadores": [
+        {
+          "nombre": "Ramiro Valenzuela",
+          "camiseta": "Valenzuela",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 48,
+            "tiro": 41,
+            "pase": 60,
+            "regate": 37,
+            "defensa": 42,
+            "fisico": 68,
+            "arquero": 78
+          },
+          "apariencia": {
+            "altura": 1.92,
+            "contextura": 0.93,
+            "piel": 2,
+            "colorPelo": 2,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Simón Quiroz",
+          "camiseta": "Quiroz",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 47,
+            "tiro": 32,
+            "pase": 54,
+            "regate": 37,
+            "defensa": 40,
+            "fisico": 60,
+            "arquero": 76
+          },
+          "apariencia": {
+            "altura": 1.92,
+            "contextura": 1.12,
+            "piel": 0,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Héctor Salazar",
+          "camiseta": "Salazar",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 59,
+            "tiro": 54,
+            "pase": 67,
+            "regate": 58,
+            "defensa": 72,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.04,
+            "piel": 4,
+            "colorPelo": 2,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Simón Vásquez",
+          "camiseta": "Vásquez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 60,
+            "pase": 72,
+            "regate": 60,
+            "defensa": 83,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.05,
+            "piel": 6,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Leandro Huenchumilla",
+          "camiseta": "Huenchumilla",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 55,
+            "pase": 62,
+            "regate": 55,
+            "defensa": 75,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.1,
+            "piel": 2,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Héctor Olivares",
+          "camiseta": "Olivares",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 59,
+            "pase": 62,
+            "regate": 63,
+            "defensa": 83,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 1.12,
+            "piel": 1,
+            "colorPelo": 4,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Maximiliano Herrera",
+          "camiseta": "Herrera",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 52,
+            "pase": 55,
+            "regate": 54,
+            "defensa": 76,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.15,
+            "piel": 1,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Alexis Leiva",
+          "camiseta": "Leiva",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 49,
+            "pase": 56,
+            "regate": 45,
+            "defensa": 66,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 0.93,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Dylan González",
+          "camiseta": "González",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 64,
+            "pase": 77,
+            "regate": 80,
+            "defensa": 65,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.07,
+            "piel": 4,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Emilio Díaz",
+          "camiseta": "Díaz",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 74,
+            "pase": 77,
+            "regate": 68,
+            "defensa": 69,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.96,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Francisco Painemal",
+          "camiseta": "Painemal",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 71,
+            "pase": 70,
+            "regate": 73,
+            "defensa": 59,
+            "fisico": 62,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.05,
+            "piel": 4,
+            "colorPelo": 2,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Esteban Zúñiga",
+          "camiseta": "Zúñiga",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 66,
+            "pase": 73,
+            "regate": 72,
+            "defensa": 64,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 1.11,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Simón Alarcón",
+          "camiseta": "Alarcón",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 67,
+            "tiro": 59,
+            "pase": 77,
+            "regate": 74,
+            "defensa": 65,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 0.98,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Vicente Castillo",
+          "camiseta": "Castillo",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 67,
+            "pase": 69,
+            "regate": 62,
+            "defensa": 62,
+            "fisico": 62,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 0.9,
+            "piel": 4,
+            "colorPelo": 4,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Jorge Navarro",
+          "camiseta": "Navarro",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 79,
+            "pase": 70,
+            "regate": 77,
+            "defensa": 50,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.1,
+            "piel": 2,
+            "colorPelo": 4,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Simón Garrido",
+          "camiseta": "Garrido",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 78,
+            "pase": 75,
+            "regate": 70,
+            "defensa": 55,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.01,
+            "piel": 2,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Benjamín Morales",
+          "camiseta": "Morales",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 63,
+            "tiro": 66,
+            "pase": 62,
+            "regate": 76,
+            "defensa": 39,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 0.92,
+            "piel": 4,
+            "colorPelo": 6,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Vicente Cárdenas",
+          "camiseta": "Cárdenas",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 70,
+            "pase": 63,
+            "regate": 72,
+            "defensa": 38,
+            "fisico": 61,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.09,
+            "piel": 5,
+            "colorPelo": 6,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "calera",
+      "nombre": "Unión La Calera",
+      "corto": "La Calera",
+      "iniciales": "ULC",
+      "ciudad": "La Calera",
+      "estadio": "Estadio Municipal Nicolás Chahuán Nazar",
+      "nivel": 69,
+      "colores": {
+        "titular": {
+          "camiseta": "#e2231a",
+          "short": "#e2231a",
+          "medias": "#e2231a",
+          "detalle": "#f7f7f7",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#f7f7f7",
+          "medias": "#f7f7f7",
+          "detalle": "#e2231a",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#e2231a",
+          "#f7f7f7",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "escudoRecto",
+        "patron": "banda"
+      },
+      "jugadores": [
+        {
+          "nombre": "Renato Figueroa",
+          "camiseta": "Figueroa",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 43,
+            "tiro": 41,
+            "pase": 51,
+            "regate": 42,
+            "defensa": 45,
+            "fisico": 72,
+            "arquero": 72
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 0.98,
+            "piel": 1,
+            "colorPelo": 6,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Jean Yáñez",
+          "camiseta": "Yáñez",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 41,
+            "tiro": 41,
+            "pase": 56,
+            "regate": 36,
+            "defensa": 46,
+            "fisico": 61,
+            "arquero": 77
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 0.96,
+            "piel": 7,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Kevin Fernández",
+          "camiseta": "Fernández",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 49,
+            "pase": 69,
+            "regate": 60,
+            "defensa": 79,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 1.07,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Iván Núñez",
+          "camiseta": "Núñez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 54,
+            "pase": 65,
+            "regate": 64,
+            "defensa": 73,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Benjamín Quidel",
+          "camiseta": "Quidel",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 56,
+            "pase": 57,
+            "regate": 54,
+            "defensa": 69,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.07,
+            "piel": 2,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Esteban Vega",
+          "camiseta": "Vega",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 52,
+            "pase": 58,
+            "regate": 56,
+            "defensa": 73,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.71,
+            "contextura": 1.08,
+            "piel": 1,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Nicolás Mella",
+          "camiseta": "Mella",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 62,
+            "tiro": 46,
+            "pase": 55,
+            "regate": 57,
+            "defensa": 75,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.03,
+            "piel": 5,
+            "colorPelo": 2,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Claudio Zúñiga",
+          "camiseta": "Zúñiga",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 62,
+            "tiro": 56,
+            "pase": 66,
+            "regate": 56,
+            "defensa": 71,
+            "fisico": 63,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 1.02,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Nicolás Quiroz",
+          "camiseta": "Quiroz",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 58,
+            "pase": 71,
+            "regate": 73,
+            "defensa": 63,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 1.13,
+            "piel": 2,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Pablo Mella",
+          "camiseta": "Mella",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 70,
+            "pase": 70,
+            "regate": 73,
+            "defensa": 68,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 0.98,
+            "piel": 2,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bruno Martínez",
+          "camiseta": "Martínez",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 69,
+            "pase": 77,
+            "regate": 69,
+            "defensa": 64,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 0.93,
+            "piel": 7,
+            "colorPelo": 4,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Matías Leiva",
+          "camiseta": "Leiva",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 59,
+            "pase": 68,
+            "regate": 72,
+            "defensa": 69,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.95,
+            "piel": 7,
+            "colorPelo": 7,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ignacio Rivera",
+          "camiseta": "Rivera",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 61,
+            "tiro": 67,
+            "pase": 76,
+            "regate": 69,
+            "defensa": 59,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 0.99,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Mauricio Poblete",
+          "camiseta": "Poblete",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 64,
+            "pase": 78,
+            "regate": 71,
+            "defensa": 55,
+            "fisico": 62,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 0.97,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bastián Silva",
+          "camiseta": "Silva",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 75,
+            "pase": 69,
+            "regate": 70,
+            "defensa": 47,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.01,
+            "piel": 6,
+            "colorPelo": 4,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Patricio Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 80,
+            "pase": 71,
+            "regate": 82,
+            "defensa": 53,
+            "fisico": 70,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 0.93,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Javier Vidal",
+          "camiseta": "Vidal",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 70,
+            "pase": 69,
+            "regate": 74,
+            "defensa": 44,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.11,
+            "piel": 5,
+            "colorPelo": 7,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Tomás Paredes",
+          "camiseta": "Paredes",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 74,
+            "pase": 60,
+            "regate": 73,
+            "defensa": 43,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.94,
+            "piel": 1,
+            "colorPelo": 3,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "laserena",
+      "nombre": "Deportes La Serena",
+      "corto": "La Serena",
+      "iniciales": "DLS",
+      "ciudad": "La Serena",
+      "estadio": "Estadio La Portada",
+      "nivel": 70,
+      "colores": {
+        "titular": {
+          "camiseta": "#7d1426",
+          "short": "#7d1426",
+          "medias": "#7d1426",
+          "detalle": "#f7f7f7",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#f7f7f7",
+          "medias": "#f7f7f7",
+          "detalle": "#7d1426",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#7d1426",
+          "#f7f7f7",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "escudo",
+        "patron": "mitad"
+      },
+      "jugadores": [
+        {
+          "nombre": "Branco Escobar",
+          "camiseta": "Escobar",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 50,
+            "tiro": 39,
+            "pase": 57,
+            "regate": 47,
+            "defensa": 45,
+            "fisico": 71,
+            "arquero": 75
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.02,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Rafael Ortiz",
+          "camiseta": "Ortiz",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 46,
+            "tiro": 33,
+            "pase": 62,
+            "regate": 40,
+            "defensa": 38,
+            "fisico": 73,
+            "arquero": 72
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 1.12,
+            "piel": 4,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Cristián Jara",
+          "camiseta": "Jara",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 63,
+            "pase": 64,
+            "regate": 65,
+            "defensa": 75,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.01,
+            "piel": 3,
+            "colorPelo": 0,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Kevin González",
+          "camiseta": "González",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 56,
+            "pase": 61,
+            "regate": 60,
+            "defensa": 71,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 1.01,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "pelado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Luciano Núñez",
+          "camiseta": "Núñez",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 63,
+            "pase": 66,
+            "regate": 60,
+            "defensa": 80,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 1.06,
+            "piel": 6,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Hugo Carrasco",
+          "camiseta": "Carrasco",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 57,
+            "pase": 67,
+            "regate": 61,
+            "defensa": 78,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 0.98,
+            "piel": 2,
+            "colorPelo": 3,
+            "estiloPelo": "rapado",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Hugo Flores",
+          "camiseta": "Flores",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 50,
+            "pase": 59,
+            "regate": 53,
+            "defensa": 75,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 1.12,
+            "piel": 6,
+            "colorPelo": 5,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Byron Guzmán",
+          "camiseta": "Guzmán",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 67,
+            "tiro": 56,
+            "pase": 61,
+            "regate": 59,
+            "defensa": 74,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 1.04,
+            "piel": 5,
+            "colorPelo": 4,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Alexis Cáceres",
+          "camiseta": "Cáceres",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 67,
+            "tiro": 71,
+            "pase": 85,
+            "regate": 72,
+            "defensa": 73,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.04,
+            "piel": 5,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Martín Bustos",
+          "camiseta": "Bustos",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 69,
+            "pase": 74,
+            "regate": 81,
+            "defensa": 72,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.66,
+            "contextura": 0.94,
+            "piel": 1,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Ignacio Ulloa",
+          "camiseta": "Ulloa",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 68,
+            "pase": 74,
+            "regate": 69,
+            "defensa": 61,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 0.97,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Claudio Salinas",
+          "camiseta": "Salinas",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 81,
+            "tiro": 74,
+            "pase": 81,
+            "regate": 78,
+            "defensa": 64,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.9,
+            "contextura": 1.12,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gabriel Navarro",
+          "camiseta": "Navarro",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 58,
+            "pase": 70,
+            "regate": 63,
+            "defensa": 55,
+            "fisico": 59,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 0.94,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Benjamín Vera",
+          "camiseta": "Vera",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 61,
+            "pase": 74,
+            "regate": 74,
+            "defensa": 65,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 0.93,
+            "piel": 5,
+            "colorPelo": 5,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Claudio Silva",
+          "camiseta": "Silva",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 83,
+            "pase": 70,
+            "regate": 83,
+            "defensa": 46,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 0.97,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gonzalo Soto",
+          "camiseta": "Soto",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 71,
+            "pase": 74,
+            "regate": 68,
+            "defensa": 51,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 0.99,
+            "piel": 6,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Claudio Aguilera",
+          "camiseta": "Aguilera",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 71,
+            "pase": 66,
+            "regate": 73,
+            "defensa": 48,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.08,
+            "piel": 0,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Elías Gutiérrez",
+          "camiseta": "Gutiérrez",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 69,
+            "pase": 59,
+            "regate": 68,
+            "defensa": 45,
+            "fisico": 59,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 0.91,
+            "piel": 2,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "everton",
+      "nombre": "Everton",
+      "corto": "Everton",
+      "iniciales": "EV",
+      "ciudad": "Viña del Mar",
+      "estadio": "Estadio Sausalito",
+      "nivel": 72,
+      "colores": {
+        "titular": {
+          "camiseta": "#1d3f8f",
+          "short": "#1d3f8f",
+          "medias": "#1d3f8f",
+          "detalle": "#f4c20d",
+          "diseno": "banda",
+          "detalle2": "#f4c20d"
+        },
+        "alternativa": {
+          "camiseta": "#f4c20d",
+          "short": "#f4c20d",
+          "medias": "#f4c20d",
+          "detalle": "#1d3f8f",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#1d3f8f",
+          "#f4c20d",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "circulo",
+        "patron": "banda"
+      },
+      "jugadores": [
+        {
+          "nombre": "Pablo Alarcón",
+          "camiseta": "Alarcón",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 51,
+            "tiro": 40,
+            "pase": 60,
+            "regate": 41,
+            "defensa": 44,
+            "fisico": 69,
+            "arquero": 72
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.02,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Renato Llanquileo",
+          "camiseta": "Llanquileo",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 49,
+            "tiro": 44,
+            "pase": 56,
+            "regate": 41,
+            "defensa": 47,
+            "fisico": 66,
+            "arquero": 73
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.11,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Camilo Mella",
+          "camiseta": "Mella",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 63,
+            "tiro": 57,
+            "pase": 70,
+            "regate": 66,
+            "defensa": 72,
+            "fisico": 81,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.7,
+            "contextura": 0.92,
+            "piel": 5,
+            "colorPelo": 0,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Dylan Henríquez",
+          "camiseta": "Henríquez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 64,
+            "pase": 66,
+            "regate": 67,
+            "defensa": 76,
+            "fisico": 75,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 0.95,
+            "piel": 0,
+            "colorPelo": 3,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Camilo Vergara",
+          "camiseta": "Vergara",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 56,
+            "pase": 73,
+            "regate": 62,
+            "defensa": 74,
+            "fisico": 84,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 0.98,
+            "piel": 3,
+            "colorPelo": 2,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Nicolás Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 61,
+            "pase": 76,
+            "regate": 58,
+            "defensa": 84,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 0.98,
+            "piel": 6,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Maximiliano Paredes",
+          "camiseta": "Paredes",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 50,
+            "pase": 59,
+            "regate": 56,
+            "defensa": 69,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.14,
+            "piel": 3,
+            "colorPelo": 6,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gonzalo Campos",
+          "camiseta": "Campos",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 54,
+            "pase": 65,
+            "regate": 62,
+            "defensa": 80,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 1.04,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Cristóbal Sandoval",
+          "camiseta": "Sandoval",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 70,
+            "pase": 77,
+            "regate": 70,
+            "defensa": 68,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.14,
+            "piel": 2,
+            "colorPelo": 4,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bruno López",
+          "camiseta": "López",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 82,
+            "tiro": 73,
+            "pase": 76,
+            "regate": 76,
+            "defensa": 70,
+            "fisico": 79,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 0.97,
+            "piel": 7,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gabriel Navarro",
+          "camiseta": "Navarro",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 70,
+            "pase": 78,
+            "regate": 74,
+            "defensa": 69,
+            "fisico": 80,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 1.12,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Dylan Escobar",
+          "camiseta": "Escobar",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 67,
+            "pase": 69,
+            "regate": 71,
+            "defensa": 63,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.14,
+            "piel": 4,
+            "colorPelo": 6,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Cristóbal Quidel",
+          "camiseta": "Quidel",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 76,
+            "tiro": 58,
+            "pase": 79,
+            "regate": 76,
+            "defensa": 57,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.15,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Francisco Parra",
+          "camiseta": "Parra",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 72,
+            "pase": 68,
+            "regate": 73,
+            "defensa": 62,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.06,
+            "piel": 1,
+            "colorPelo": 4,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Martín Jara",
+          "camiseta": "Jara",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 85,
+            "tiro": 75,
+            "pase": 73,
+            "regate": 73,
+            "defensa": 53,
+            "fisico": 83,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 1.14,
+            "piel": 5,
+            "colorPelo": 5,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Andrés Romero",
+          "camiseta": "Romero",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 76,
+            "pase": 66,
+            "regate": 69,
+            "defensa": 46,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 1.04,
+            "piel": 5,
+            "colorPelo": 1,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Branco Vera",
+          "camiseta": "Vera",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 68,
+            "pase": 60,
+            "regate": 71,
+            "defensa": 53,
+            "fisico": 64,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.11,
+            "piel": 3,
+            "colorPelo": 1,
+            "estiloPelo": "mohicano",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Tomás Riquelme",
+          "camiseta": "Riquelme",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 80,
+            "pase": 71,
+            "regate": 76,
+            "defensa": 45,
+            "fisico": 67,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.08,
+            "piel": 2,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "udeconce",
+      "nombre": "Universidad de Concepción",
+      "corto": "U. de Conce",
+      "iniciales": "UdeC",
+      "ciudad": "Concepción",
+      "estadio": "Estadio Ester Roa Rebolledo",
+      "nivel": 69,
+      "colores": {
+        "titular": {
+          "camiseta": "#f4c20d",
+          "short": "#1d4f9e",
+          "medias": "#f4c20d",
+          "detalle": "#1d4f9e",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#1d4f9e",
+          "short": "#1d4f9e",
+          "medias": "#1d4f9e",
+          "detalle": "#f4c20d",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#f4c20d",
+          "#1d4f9e",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "escudoRecto",
+        "patron": "mitad"
+      },
+      "jugadores": [
+        {
+          "nombre": "Yerko Pizarro",
+          "camiseta": "Pizarro",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 46,
+            "tiro": 45,
+            "pase": 64,
+            "regate": 38,
+            "defensa": 47,
+            "fisico": 62,
+            "arquero": 79
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.09,
+            "piel": 1,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Agustín Cáceres",
+          "camiseta": "Cáceres",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 44,
+            "tiro": 30,
+            "pase": 53,
+            "regate": 31,
+            "defensa": 35,
+            "fisico": 59,
+            "arquero": 73
+          },
+          "apariencia": {
+            "altura": 1.93,
+            "contextura": 1.09,
+            "piel": 6,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Lucas Torres",
+          "camiseta": "Torres",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 73,
+            "tiro": 51,
+            "pase": 61,
+            "regate": 59,
+            "defensa": 82,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.02,
+            "piel": 2,
+            "colorPelo": 3,
+            "estiloPelo": "mohicano",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Benjamín Rodríguez",
+          "camiseta": "Rodríguez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 66,
+            "pase": 65,
+            "regate": 59,
+            "defensa": 75,
+            "fisico": 75,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 0.97,
+            "piel": 0,
+            "colorPelo": 1,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Martín Figueroa",
+          "camiseta": "Figueroa",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 61,
+            "pase": 67,
+            "regate": 59,
+            "defensa": 70,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.72,
+            "contextura": 0.93,
+            "piel": 5,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Matías Orellana",
+          "camiseta": "Orellana",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 64,
+            "pase": 62,
+            "regate": 65,
+            "defensa": 81,
+            "fisico": 74,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.8,
+            "contextura": 1.02,
+            "piel": 6,
+            "colorPelo": 6,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gaspar Olivares",
+          "camiseta": "Olivares",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 57,
+            "pase": 66,
+            "regate": 60,
+            "defensa": 72,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.01,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bastián Sánchez",
+          "camiseta": "Sánchez",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 53,
+            "pase": 64,
+            "regate": 52,
+            "defensa": 65,
+            "fisico": 64,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.13,
+            "piel": 3,
+            "colorPelo": 3,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Andrés Valenzuela",
+          "camiseta": "Valenzuela",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 66,
+            "pase": 76,
+            "regate": 78,
+            "defensa": 61,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.69,
+            "contextura": 1.1,
+            "piel": 0,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Yerko Cárdenas",
+          "camiseta": "Cárdenas",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 63,
+            "pase": 81,
+            "regate": 73,
+            "defensa": 62,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.11,
+            "piel": 7,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Dylan Quiroz",
+          "camiseta": "Quiroz",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 78,
+            "tiro": 68,
+            "pase": 73,
+            "regate": 76,
+            "defensa": 71,
+            "fisico": 72,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 0.92,
+            "piel": 1,
+            "colorPelo": 7,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Esteban López",
+          "camiseta": "López",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 70,
+            "tiro": 60,
+            "pase": 73,
+            "regate": 72,
+            "defensa": 56,
+            "fisico": 60,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.01,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Emilio Castillo",
+          "camiseta": "Castillo",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 59,
+            "tiro": 53,
+            "pase": 62,
+            "regate": 68,
+            "defensa": 58,
+            "fisico": 62,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.78,
+            "contextura": 1.09,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Benjamín Salinas",
+          "camiseta": "Salinas",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 59,
+            "tiro": 62,
+            "pase": 62,
+            "regate": 59,
+            "defensa": 52,
+            "fisico": 63,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.14,
+            "piel": 6,
+            "colorPelo": 4,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gaspar Bustos",
+          "camiseta": "Bustos",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 81,
+            "tiro": 78,
+            "pase": 64,
+            "regate": 78,
+            "defensa": 52,
+            "fisico": 78,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.86,
+            "contextura": 0.92,
+            "piel": 7,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Gonzalo Toro",
+          "camiseta": "Toro",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 80,
+            "tiro": 71,
+            "pase": 66,
+            "regate": 73,
+            "defensa": 56,
+            "fisico": 69,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 1.1,
+            "piel": 2,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Brayan Cáceres",
+          "camiseta": "Cáceres",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 72,
+            "pase": 65,
+            "regate": 69,
+            "defensa": 48,
+            "fisico": 62,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.87,
+            "contextura": 1.01,
+            "piel": 6,
+            "colorPelo": 7,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Rafael Vega",
+          "camiseta": "Vega",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 72,
+            "pase": 57,
+            "regate": 67,
+            "defensa": 44,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.09,
+            "piel": 5,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "dconcepcion",
+      "nombre": "Deportes Concepción",
+      "corto": "D. Concepción",
+      "iniciales": "DC",
+      "ciudad": "Concepción",
+      "estadio": "Estadio Ester Roa Rebolledo",
+      "nivel": 68,
+      "colores": {
+        "titular": {
+          "camiseta": "#7a3e9d",
+          "short": "#f7f7f7",
+          "medias": "#7a3e9d",
+          "detalle": "#f7f7f7",
+          "diseno": "liso"
+        },
+        "alternativa": {
+          "camiseta": "#f7f7f7",
+          "short": "#7a3e9d",
+          "medias": "#f7f7f7",
+          "detalle": "#7a3e9d",
+          "diseno": "liso"
+        },
+        "emblema": [
+          "#7a3e9d",
+          "#f7f7f7",
+          "#ffffff"
+        ]
+      },
+      "emblema": {
+        "forma": "diamante",
+        "patron": "aro"
+      },
+      "jugadores": [
+        {
+          "nombre": "Jorge Tapia",
+          "camiseta": "Tapia",
+          "dorsal": 1,
+          "posicion": "ARQ",
+          "titular": true,
+          "atributos": {
+            "velocidad": 56,
+            "tiro": 49,
+            "pase": 58,
+            "regate": 39,
+            "defensa": 53,
+            "fisico": 66,
+            "arquero": 71
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 1.14,
+            "piel": 2,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Kevin Rivera",
+          "camiseta": "Rivera",
+          "dorsal": 12,
+          "posicion": "ARQ",
+          "titular": false,
+          "atributos": {
+            "velocidad": 40,
+            "tiro": 33,
+            "pase": 55,
+            "regate": 40,
+            "defensa": 34,
+            "fisico": 60,
+            "arquero": 65
+          },
+          "apariencia": {
+            "altura": 1.84,
+            "contextura": 0.91,
+            "piel": 2,
+            "colorPelo": 0,
+            "estiloPelo": "crespo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Iván Torres",
+          "camiseta": "Torres",
+          "dorsal": 2,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 59,
+            "pase": 64,
+            "regate": 57,
+            "defensa": 83,
+            "fisico": 81,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.73,
+            "contextura": 1.13,
+            "piel": 2,
+            "colorPelo": 5,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Enzo Sánchez",
+          "camiseta": "Sánchez",
+          "dorsal": 3,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 62,
+            "tiro": 60,
+            "pase": 60,
+            "regate": 51,
+            "defensa": 72,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.73,
+            "contextura": 1.09,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Esteban Figueroa",
+          "camiseta": "Figueroa",
+          "dorsal": 4,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 65,
+            "tiro": 54,
+            "pase": 57,
+            "regate": 53,
+            "defensa": 69,
+            "fisico": 71,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.79,
+            "contextura": 0.93,
+            "piel": 1,
+            "colorPelo": 4,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bruno Navarro",
+          "camiseta": "Navarro",
+          "dorsal": 5,
+          "posicion": "DEF",
+          "titular": true,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 54,
+            "pase": 66,
+            "regate": 56,
+            "defensa": 73,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.82,
+            "contextura": 1.08,
+            "piel": 5,
+            "colorPelo": 2,
+            "estiloPelo": "pelado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Héctor Nahuelpán",
+          "camiseta": "Nahuelpán",
+          "dorsal": 6,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 69,
+            "tiro": 50,
+            "pase": 62,
+            "regate": 56,
+            "defensa": 72,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 0.91,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Enzo Martínez",
+          "camiseta": "Martínez",
+          "dorsal": 13,
+          "posicion": "DEF",
+          "titular": false,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 43,
+            "pase": 54,
+            "regate": 48,
+            "defensa": 63,
+            "fisico": 61,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.85,
+            "contextura": 0.96,
+            "piel": 4,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Rafael Bustos",
+          "camiseta": "Bustos",
+          "dorsal": 8,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 75,
+            "tiro": 75,
+            "pase": 73,
+            "regate": 77,
+            "defensa": 68,
+            "fisico": 77,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.76,
+            "contextura": 1.04,
+            "piel": 3,
+            "colorPelo": 4,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Dylan Ancamil",
+          "camiseta": "Ancamil",
+          "dorsal": 10,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 64,
+            "pase": 72,
+            "regate": 67,
+            "defensa": 61,
+            "fisico": 60,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.74,
+            "contextura": 0.93,
+            "piel": 1,
+            "colorPelo": 7,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bastián Figueroa",
+          "camiseta": "Figueroa",
+          "dorsal": 14,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 64,
+            "tiro": 66,
+            "pase": 72,
+            "regate": 77,
+            "defensa": 64,
+            "fisico": 68,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.77,
+            "contextura": 0.99,
+            "piel": 0,
+            "colorPelo": 6,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Eduardo Poblete",
+          "camiseta": "Poblete",
+          "dorsal": 16,
+          "posicion": "VOL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 77,
+            "tiro": 65,
+            "pase": 79,
+            "regate": 77,
+            "defensa": 72,
+            "fisico": 65,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.67,
+            "contextura": 1.06,
+            "piel": 3,
+            "colorPelo": 7,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Bruno Lagos",
+          "camiseta": "Lagos",
+          "dorsal": 17,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 72,
+            "tiro": 63,
+            "pase": 66,
+            "regate": 69,
+            "defensa": 60,
+            "fisico": 57,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.88,
+            "contextura": 0.95,
+            "piel": 1,
+            "colorPelo": 1,
+            "estiloPelo": "largo",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Benjamín Martínez",
+          "camiseta": "Martínez",
+          "dorsal": 20,
+          "posicion": "VOL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 68,
+            "tiro": 59,
+            "pase": 70,
+            "regate": 67,
+            "defensa": 55,
+            "fisico": 55,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.81,
+            "contextura": 1.11,
+            "piel": 3,
+            "colorPelo": 5,
+            "estiloPelo": "corto",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Héctor Olivares",
+          "camiseta": "Olivares",
+          "dorsal": 7,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 66,
+            "tiro": 72,
+            "pase": 69,
+            "regate": 70,
+            "defensa": 50,
+            "fisico": 76,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.75,
+            "contextura": 1.11,
+            "piel": 2,
+            "colorPelo": 1,
+            "estiloPelo": "crespo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Martín González",
+          "camiseta": "González",
+          "dorsal": 9,
+          "posicion": "DEL",
+          "titular": true,
+          "atributos": {
+            "velocidad": 74,
+            "tiro": 72,
+            "pase": 65,
+            "regate": 71,
+            "defensa": 45,
+            "fisico": 73,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.89,
+            "contextura": 1.07,
+            "piel": 4,
+            "colorPelo": 5,
+            "estiloPelo": "rapado",
+            "barba": false
+          }
+        },
+        {
+          "nombre": "Esteban López",
+          "camiseta": "López",
+          "dorsal": 11,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 71,
+            "tiro": 67,
+            "pase": 60,
+            "regate": 70,
+            "defensa": 41,
+            "fisico": 61,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.83,
+            "contextura": 0.98,
+            "piel": 3,
+            "colorPelo": 6,
+            "estiloPelo": "largo",
+            "barba": true
+          }
+        },
+        {
+          "nombre": "Tomás Cortés",
+          "camiseta": "Cortés",
+          "dorsal": 18,
+          "posicion": "DEL",
+          "titular": false,
+          "atributos": {
+            "velocidad": 60,
+            "tiro": 73,
+            "pase": 57,
+            "regate": 61,
+            "defensa": 40,
+            "fisico": 66,
+            "arquero": 30
+          },
+          "apariencia": {
+            "altura": 1.68,
+            "contextura": 1,
+            "piel": 6,
+            "colorPelo": 0,
+            "estiloPelo": "corto",
+            "barba": true
+          }
+        }
+      ]
+    }
+  ]
+}
