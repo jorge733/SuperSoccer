@@ -18,17 +18,17 @@ function texturaPasto(tam) {
   const px = W / ANCHO_TOTAL; // píxeles por metro
   const aX = (x) => (x + ANCHO_TOTAL / 2) * px;
   const aZ = (z) => (z + ALTO_TOTAL / 2) * px;
-  ctx.fillStyle = '#3f7d2c';
+  ctx.fillStyle = '#3c6e2b';
   ctx.fillRect(0, 0, W, H);
   // Franjas de corte (perpendiculares al largo)
   const franjas = 20, anchoF = CANCHA.largo / franjas;
   for (let i = -3; i < franjas + 3; i++) {
     const x0 = -MITAD_L + i * anchoF;
-    ctx.fillStyle = i % 2 === 0 ? '#467f2f' : '#3a7027';
+    ctx.fillStyle = i % 2 === 0 ? '#42762f' : '#386729';
     ctx.fillRect(aX(x0), 0, anchoF * px + 1, H);
   }
   // Franjas suaves cruzadas (corte en dos direcciones)
-  ctx.globalAlpha = 0.07;
+  ctx.globalAlpha = 0.025;
   for (let i = 0; i < 14; i++) {
     ctx.fillStyle = i % 2 ? '#000' : '#fff';
     ctx.fillRect(0, aZ(-MITAD_A + i * (CANCHA.ancho / 14)), W, (CANCHA.ancho / 14) * px + 1);
@@ -343,11 +343,11 @@ export class Estadio {
       { largo: 88, filas: 24, d: MITAD_L + 10, rot: -Math.PI / 2, normal: new THREE.Vector3(-1, 0, 0) },
     ];
     const prof = 0.82, alto = 0.42;
-    this.coloresAsientos = ['#b8202a', '#f0f0f0', '#1e3d8f'];
+    this.coloresAsientos = ['#6e2a2e', '#8a8d93', '#2b3a5e'];
     for (const [i, lado] of lados.entries()) {
       const geo = crearGraderia({
         largo: lado.largo, filas: lado.filas, prof, alto,
-        asientos: (f) => this.coloresAsientos[Math.floor(f / 6) % this.coloresAsientos.length],
+        asientos: (f) => this.coloresAsientos[Math.floor(f / 10) % this.coloresAsientos.length],
       });
       const m = new THREE.Mesh(geo, matG);
       m.receiveShadow = true;
@@ -359,6 +359,13 @@ export class Estadio {
       grupo.position.copy(lado.normal).multiplyScalar(lado.d);
       // rot=0 => la gradería crece hacia +Z; para el lado +Z necesitamos que crezca hacia afuera (+Z) ✓
       this.grupo.add(grupo);
+      // Capa de público "pintado" sobre la pendiente: la gradería se ve llena aun con pocas figuras 3D
+      const largoPend = Math.hypot(lado.filas * prof, lado.filas * alto);
+      const capa = new THREE.Mesh(new THREE.PlaneGeometry(lado.largo, largoPend), this.materialPublicoPintado(lado.largo, largoPend));
+      capa.rotation.set(-Math.PI / 2 - Math.atan2(alto, prof), 0, Math.PI); // mira hacia la cancha
+      capa.position.set(0, 0.9 + (lado.filas * alto) / 2 + 0.32, (lado.filas * prof) / 2);
+      capa.receiveShadow = true;
+      grupo.add(capa);
       // Posiciones de asientos (en coordenadas del mundo)
       const sep = 0.56;
       for (let f = 0; f < lado.filas; f++) {
@@ -391,6 +398,67 @@ export class Estadio {
         grupo.add(v);
       }
     }
+  }
+
+  // Textura repetible con hinchas sentados (camisetas de colores y cabezas), generada por código.
+  materialPublicoPintado(ancho, alto) {
+    if (!this.texPublico) {
+      const c = document.createElement('canvas'); c.width = 512; c.height = 384;
+      this.canvasPublico = c;
+      this.texPublico = new THREE.CanvasTexture(c);
+      this.texPublico.colorSpace = THREE.SRGBColorSpace;
+      this.texPublico.wrapS = this.texPublico.wrapT = THREE.RepeatWrapping;
+      this.texPublico.anisotropy = 8;
+      this.matsPublico = [];
+      this.pintarPublico(['#c8c8c8', '#2a2a2a', '#b02a2a', '#2b4a8f'], ['#e0c020']);
+    }
+    const tx = this.texPublico.clone();
+    tx.repeat.set(ancho / (8 * 0.56), alto / (6 * 0.93));
+    tx.needsUpdate = true;
+    const m = new THREE.MeshLambertMaterial({ map: tx });
+    this.matsPublico.push(m);
+    return m;
+  }
+
+  pintarPublico(local, visita) {
+    const c = this.canvasPublico;
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    const rnd = semilla(17);
+    ctx.fillStyle = '#26282c';
+    ctx.fillRect(0, 0, c.width, c.height);
+    const cw = c.width / 8, ch = c.height / 6;
+    const pieles = ['#e8c2a0', '#d9a77f', '#c68d63', '#a96e46', '#6b3f26'];
+    const neutros = ['#2a2a2a', '#3b4a63', '#6b6b6b', '#d8d8d8', '#5a3a2a'];
+    for (let fila = 0; fila < 6; fila++) {
+      for (let col = 0; col < 8; col++) {
+        if (rnd() < 0.06) continue; // asiento vacío
+        const x = col * cw + cw / 2 + (rnd() - 0.5) * cw * 0.25, y = fila * ch + ch * 0.62;
+        const r = rnd();
+        const ropa = r < 0.7 ? local[Math.floor(rnd() * local.length)] : r < 0.78 ? visita[0] : neutros[Math.floor(rnd() * neutros.length)];
+        const g = ctx.createLinearGradient(0, y - ch * 0.3, 0, y + ch * 0.35);
+        g.addColorStop(0, ropa); g.addColorStop(1, '#111');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.ellipse(x, y, cw * 0.36, ch * 0.34, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = pieles[Math.floor(rnd() * pieles.length)];
+        ctx.beginPath(); ctx.arc(x, y - ch * 0.42, cw * 0.16, 0, Math.PI * 2); ctx.fill();
+        if (rnd() < 0.5) { ctx.fillStyle = 'rgba(20,14,10,0.9)'; ctx.beginPath(); ctx.arc(x, y - ch * 0.5, cw * 0.15, Math.PI, 0); ctx.fill(); }
+        if (rnd() < 0.15) { // brazos arriba / bufanda
+          ctx.strokeStyle = ropa; ctx.lineWidth = cw * 0.1;
+          ctx.beginPath(); ctx.moveTo(x - cw * 0.3, y - ch * 0.2); ctx.lineTo(x - cw * 0.38, y - ch * 0.7); ctx.stroke();
+        }
+      }
+    }
+    this.texPublico.needsUpdate = true;
+    for (const m of this.matsPublico) { m.map.image = c; m.map.needsUpdate = true; }
+  }
+
+  // El público pintado "salta" levemente con la emoción
+  animarPublico(t, emocion) {
+    if (!this.matsPublico) return;
+    for (const m of this.matsPublico) m.map.offset.y = Math.max(0, Math.sin(t * 9)) * 0.012 * emocion;
   }
 
   crearTorres() {

@@ -11,18 +11,20 @@ function geometriaHincha() {
     g.setAttribute('aBrazo', new THREE.BufferAttribute(new Float32Array(n).fill(brazo), 1));
     return g.index ? g.toNonIndexed() : g;
   };
-  partes.push(marcar(new THREE.BoxGeometry(0.42, 0.55, 0.26).translate(0, 0.62, 0), 0));       // torso
-  partes.push(marcar(new THREE.SphereGeometry(0.12, 6, 4).translate(0, 1.04, 0.01), 0));        // cabeza
-  partes.push(marcar(new THREE.BoxGeometry(0.4, 0.34, 0.4).translate(0, 0.2, 0.1), 0));          // piernas (sentado)
-  partes.push(marcar(new THREE.BoxGeometry(0.1, 0.48, 0.1).translate(0.27, 0.62, 0), 1));       // brazo izq
-  partes.push(marcar(new THREE.BoxGeometry(0.1, 0.48, 0.1).translate(-0.27, 0.62, 0), -1));     // brazo der
+  // Siluetas redondeadas (cápsulas) en vez de cajas: se ven como personas desde la cámara de TV
+  partes.push(marcar(new THREE.CapsuleGeometry(0.19, 0.3, 1, 7).scale(1, 1, 0.62).translate(0, 0.68, 0), 0)); // torso
+  partes.push(marcar(new THREE.SphereGeometry(0.11, 7, 5).scale(0.9, 1.08, 1).translate(0, 1.07, 0.01), 0)); // cabeza
+  partes.push(marcar(new THREE.CapsuleGeometry(0.075, 0.3, 1, 5).rotateX(Math.PI / 2).translate(0.1, 0.32, 0.18), 0));  // muslos (sentado)
+  partes.push(marcar(new THREE.CapsuleGeometry(0.075, 0.3, 1, 5).rotateX(Math.PI / 2).translate(-0.1, 0.32, 0.18), 0));
+  partes.push(marcar(new THREE.CapsuleGeometry(0.05, 0.4, 1, 5).translate(0.25, 0.64, 0), 1));   // brazo izq
+  partes.push(marcar(new THREE.CapsuleGeometry(0.05, 0.4, 1, 5).translate(-0.25, 0.64, 0), -1)); // brazo der
   const g = mergeGeometries(partes);
   // Color de piel en la cabeza y brazos: vertex color
   const n = g.attributes.position.count;
   const col = new Float32Array(n * 3);
   const p = g.attributes.position;
   for (let i = 0; i < n; i++) {
-    const cabeza = p.getY(i) > 0.9;
+    const cabeza = p.getY(i) > 0.95;
     const v = cabeza ? 0.0 : 1.0; // 0 = usar tono de piel, 1 = usar color de la camiseta
     col[i * 3] = v; col[i * 3 + 1] = v; col[i * 3 + 2] = v;
   }
@@ -41,7 +43,7 @@ export class Publico {
     if (this.malla) { this.escena.remove(this.malla); this.malla.geometry.dispose(); }
     const rnd = semilla(42);
     // Elegimos asientos al azar (más llenos abajo)
-    const lista = asientos.filter((a) => rnd() < 1.05 - a.fila * 0.012);
+    const lista = asientos.filter((a) => rnd() < 1.1 - a.fila * 0.008);
     for (let i = lista.length - 1; i > 0; i--) { const k = Math.floor(rnd() * (i + 1)); [lista[i], lista[k]] = [lista[k], lista[i]]; }
     const n = Math.min(cantidad, lista.length);
     const geo = geometriaHincha();
@@ -62,10 +64,10 @@ export class Publico {
           float activo = step(fract(aFase * 7.31), ex);
           // brazos arriba cuando hay emoción
           if (abs(aBrazo) > 0.5) {
-            float sube = activo * (0.6 + 0.4 * ritmo) * ex;
-            vec3 hombro = vec3(0.27 * aBrazo, 0.86, 0.0);
+            float sube = activo * smoothstep(0.45, 0.9, ex) * (0.75 + 0.25 * ritmo);
+            vec3 hombro = vec3(0.25 * aBrazo, 0.86, 0.0);
             vec3 r = transformed - hombro;
-            float a = sube * 2.8 * aBrazo;
+            float a = sube * 2.7 * aBrazo;
             float c = cos(a), s = sin(a);
             transformed = hombro + vec3(r.x * c - r.y * s, r.x * s + r.y * c, r.z);
           }
@@ -117,7 +119,7 @@ export class Publico {
       if (sectorVisita) col = r < 0.85 ? coloresVisita[Math.floor(rnd() * coloresVisita.length)] : neutros[Math.floor(rnd() * neutros.length)];
       else col = r < 0.72 ? coloresLocal[Math.floor(rnd() * coloresLocal.length)] : r < 0.8 ? coloresVisita[0] : neutros[Math.floor(rnd() * neutros.length)];
       c.set(col);
-      c.offsetHSL(0, 0, (rnd() - 0.5) * 0.1);
+      c.offsetHSL(0, -0.12, (rnd() - 0.5) * 0.16);
       this.malla.setColorAt(i, c);
     }
     this.malla.instanceColor.needsUpdate = true;

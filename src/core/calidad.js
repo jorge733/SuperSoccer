@@ -6,15 +6,15 @@ export const NIVELES = {
   },
   media: {
     nombre: 'Media', pixelRatio: 1, sombras: true, mapaSombra: 1024, ssao: false, bloom: true,
-    aa: 'fxaa', publico: 5000, texturaCancha: 2048, lluvia: 4000, redes: true, focosExtra: false,
+    aa: 'fxaa', publico: 7000, texturaCancha: 2048, lluvia: 4000, redes: true, focosExtra: false,
   },
   alta: {
     nombre: 'Alta', pixelRatio: 1.25, sombras: true, mapaSombra: 2048, ssao: true, bloom: true,
-    aa: 'smaa', publico: 10000, texturaCancha: 2048, lluvia: 8000, redes: true, focosExtra: true,
+    aa: 'smaa', publico: 12000, texturaCancha: 2048, lluvia: 8000, redes: true, focosExtra: true,
   },
   ultra: {
     nombre: 'Ultra', pixelRatio: 2, sombras: true, mapaSombra: 4096, ssao: true, bloom: true,
-    aa: 'smaa', publico: 18000, texturaCancha: 4096, lluvia: 14000, redes: true, focosExtra: true,
+    aa: 'smaa', publico: 20000, texturaCancha: 4096, lluvia: 14000, redes: true, focosExtra: true,
   },
 };
 

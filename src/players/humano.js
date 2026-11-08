@@ -196,3 +196,11 @@ export function crearModelo(apariencia = {}) {
   };
   return modelo;
 }
+
+// Esqueleto sin malla: lo usa el jugador realista para calcular la animación antes de trasladarla.
+export function crearEsqueleto() {
+  const huesos = HUESOS.map((n) => { const b = new THREE.Bone(); b.name = n; b.position.set(...OFFSET[n]); return b; });
+  for (const n of HUESOS) if (PADRE[n]) huesos[IDX[PADRE[n]]].add(huesos[IDX[n]]);
+  return huesos;
+}
+export { PADRE, OFFSET };

@@ -6,19 +6,19 @@ export const HORAS = {
   dia: {
     nombre: 'Día', hdri: 'quarry_01_1k.hdr', fondo: 0.95, env: 0.85, sol: 3.2, colorSol: 0xfff3e0,
     elev: 52, azim: -35, hemi: 0.35, focos: 0, exposicion: 0.95,
-    post: { bloom: 0.18, umbral: 0.95, saturacion: 1.1, contraste: 1.06, tinte: [1, 1, 1] },
+    post: { bloom: 0.15, umbral: 0.95, saturacion: 0.98, contraste: 1.05, tinte: [1.0, 1.0, 0.99] },
     niebla: 0x9fb4c8,
   },
   atardecer: {
     nombre: 'Atardecer', hdri: 'venice_sunset_1k.hdr', fondo: 1.0, env: 0.75, sol: 2.6, colorSol: 0xffb070,
     elev: 11, azim: 60, hemi: 0.3, focos: 1.2, exposicion: 0.95,
-    post: { bloom: 0.35, umbral: 0.9, saturacion: 1.15, contraste: 1.08, tinte: [1.04, 0.98, 0.92] },
+    post: { bloom: 0.3, umbral: 0.9, saturacion: 1.03, contraste: 1.06, tinte: [1.04, 0.99, 0.93] },
     niebla: 0xc89a7a,
   },
   noche: {
     nombre: 'Noche', hdri: 'moonless_golf_1k.hdr', fondo: 0.6, env: 0.4, sol: 3.0, colorSol: 0xeef3ff,
     elev: 70, azim: 20, hemi: 0.6, focos: 3.2, exposicion: 1.18,
-    post: { bloom: 0.55, umbral: 0.82, saturacion: 1.05, contraste: 1.08, tinte: [0.97, 0.99, 1.04] },
+    post: { bloom: 0.5, umbral: 0.82, saturacion: 0.97, contraste: 1.07, tinte: [0.97, 0.99, 1.04] },
     niebla: 0x10141c,
   },
 };
@@ -179,7 +179,7 @@ export class Ambiente {
       this.escena.environmentIntensity = h.env * 0.9;
       render?.ambientar({ ...h.post, saturacion: h.post.saturacion * 0.85, exposicion: h.exposicion * 0.95 });
     } else {
-      this.escena.fog = null;
+      this.escena.fog = this.hora === 'noche' ? null : new THREE.Fog(h.niebla, 160, 700);
     }
   }
 

@@ -393,6 +393,7 @@ export class Animador {
     const hs = this.modelo.huesos;
     for (let b = 0; b < NB; b++) hs[b].rotation.set(p[b * 3], p[b * 3 + 1], p[b * 3 + 2]);
     hs[0].position.set(p[OFF], 0.98 + p[OFF + 1], p[OFF + 2]);
+    this.modelo.alAplicarPose?.();
   }
 }
 

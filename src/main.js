@@ -12,6 +12,7 @@ import { Ambiente } from './world/ambiente.js';
 import { Camaras } from './game/camaras.js';
 import { Partido } from './game/partido.js';
 import { Jugador } from './game/jugador.js';
+import { cargarModelosRealistas } from './players/realista.js';
 import { Hud, aviso } from './ui/hud.js';
 import { Menus } from './ui/menus.js';
 import { sonido } from './audio/sonido.js';
@@ -68,10 +69,16 @@ class App {
     this.aplicarCalidad(this.nivel, false);
     this.ambiente.fijarHora('dia', this.render, this.estadio);
     this.camaras.modo = 'menu';
-    progreso(0.82, 'Vistiendo al jugador…');
+    progreso(0.78, 'Cargando futbolistas 3D (GLB + KTX2)…');
+    try {
+      await cargarModelosRealistas(this.render.renderer, (p) => progreso(0.78 + p * 0.1));
+    } catch (e) {
+      console.warn('No se pudieron cargar los modelos realistas; se usan los modelos simples.', e);
+    }
+    progreso(0.88, 'Vistiendo al jugador…');
     await esperar();
     this.crearVitrina(this.clubes[0]);
-    progreso(0.9, 'Compilando sombreadores…');
+    progreso(0.92, 'Compilando sombreadores…');
     await esperar();
     this.camaras.actualizar(0.016, { balon: this.balon.pos, instantaneo: true });
     try { await this.render.renderer.compileAsync(this.escena, this.camaras.cam); } catch { /* ignorar */ }
@@ -140,6 +147,7 @@ class App {
     const kitL = config.local.colores.titular;
     this.coloresPublico = [[kitL.camiseta, kitL.detalle, kitL.short], [config.visita.colores.titular.camiseta]];
     this.publico.colorear(...this.coloresPublico);
+    this.estadio.pintarPublico(...this.coloresPublico);
     const cl = config.local.colores.titular;
     this.estadio.coloresAsientos = [cl.camiseta, cl.detalle];
     this.camaras.modo = ajustes.camara || 'tv';

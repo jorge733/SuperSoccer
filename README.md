@@ -120,6 +120,8 @@ Para regenerar planteles ficticios nuevos: `npm run datos` (sobrescribe el archi
 ```
 index.html            Página del juego
 public/hdri/          Cielos HDRI (Poly Haven, CC0)
+public/modelos/       Futbolistas realistas (GLB Meshopt + texturas KTX2, Rocketbox MIT)
+public/basis/         Lector de texturas KTX2
 src/main.js           Arranque, pantalla de carga y bucle principal
 src/core/             Render y post-procesado, calidad gráfica, controles (Gamepad API + teclado), ajustes
 src/world/            Estadio, cancha, redes con tela simulada, público con instancing, clima/luces, balón y física (Rapier)
@@ -129,7 +131,7 @@ src/modes/            Campeonato Nacional y Copa Chile
 src/ui/               Menús, HUD (marcador, radar, potencia) y emblemas
 src/audio/            Sonido generado con Web Audio API
 src/data/clubes.json  Datos editables de clubes y jugadores
-scripts/              Generador de planteles ficticios
+scripts/              Generador de planteles y preparación de modelos 3D
 ```
 
 ## 🧱 Tecnologías
@@ -137,6 +139,7 @@ scripts/              Generador de planteles ficticios
 - [Three.js](https://threejs.org) (MIT) — motor 3D, iluminación PBR, sombras, post-procesado (GTAO/SSAO, bloom, SMAA/FXAA).
 - [Rapier](https://rapier.rs) (Apache 2.0) — física del balón, palos, travesaños, redes y cuerpos de los jugadores.
 - [Vite](https://vitejs.dev) (MIT) — compilación y servidor de desarrollo.
+- [glTF Transform](https://gltf-transform.dev), meshoptimizer y ktx2-encoder (MIT) — compresión de modelos y texturas (solo al preparar los recursos).
 
 ## 📜 Recursos de terceros y licencias
 
@@ -148,23 +151,33 @@ scripts/              Generador de planteles ficticios
 | Three.js + addons | mrdoob y colaboradores | MIT | Motor 3D |
 | Rapier (`@dimforge/rapier3d-compat`) | Dimforge | Apache 2.0 | Física |
 
-**Modelos, animaciones, texturas y sonidos propios (generados por código, sin licencias de terceros):**
+| Futbolistas 3D "Sports_Male_02" y "Sports_Male_03" (modelos, esqueletos y texturas) | [Microsoft Rocketbox Avatar Library](https://github.com/microsoft/Microsoft-Rocketbox) | **MIT** (ver `public/modelos/LICENCIA-Rocketbox.txt`) | Jugadores, arqueros y árbitros |
+| Transcodificador Basis Universal (`public/basis/`) | Binomial / three.js | Apache 2.0 | Lectura de texturas KTX2 |
 
-- **Jugadores, árbitros y público**: modelos humanos generados por código (`src/players/humano.js`) con un esqueleto de 17 huesos.
-  Las animaciones (trotar, correr, pasar, tirar, cabecear, barrer, caer, celebrar, atajar, lanzarse, saque de banda, etc.) son
-  procedurales (`src/players/animacion.js`), se mezclan suavemente y la pisada se sincroniza con la distancia recorrida para que los pies no patinen.
-  *¿Por qué no Mixamo?* Mixamo exige iniciar sesión con una cuenta de Adobe para descargar y su licencia no permite redistribuir los
-  archivos sueltos en un repositorio público; por eso se optó por modelos propios, libres de restricciones.
-- **Estadio** (cancha, líneas de cal, arcos, redes, graderías, techo, torres de iluminación, bancas, pantalla gigante, vallas LED): generado por código.
-- **Texturas** (pasto con franjas de corte y desgaste, balón de 32 paneles, camisetas con número y nombre, redes, vallas): dibujadas por código en canvas.
-- **Emblemas**: diseños originales con las iniciales y colores de cada club (no son escudos oficiales).
+**Cómo se prepararon los futbolistas realistas** (todo queda en el repositorio para poder repetirlo):
+
+1. Los FBX de Rocketbox se convierten a glTF en un navegador sin pantalla (FBXLoader + GLTFExporter de three.js).
+2. `scripts/procesar-jugadores.py` borra el diseño original de la camiseta (rayas, números, publicidad), conserva los pliegues
+   de la tela y marca las zonas (camiseta, short, medias, bordes) para que el juego pinte los colores de cada club.
+3. `scripts/construir-modelos.mjs` comprime los modelos a **GLB con Meshopt** (EXT_meshopt_compression + cuantización) y las texturas a **KTX2** (Basis UASTC con mipmaps).
+4. En el juego (`src/players/realista.js`) un sombreador pinta la camiseta de cada club (liso, franjas, banda, aros, etc.),
+   el número y el nombre en la espalda, guantes y mangas largas para los arqueros, y tiñe la piel según el jugador.
+   Las animaciones del juego se trasladan ("retarget") al esqueleto de Rocketbox en cada cuadro.
+
+**Hecho por código, sin licencias de terceros:**
+
+- **Animaciones** (`src/players/animacion.js`): trotar, correr, pasar, tirar, cabecear, barrer, caer, celebrar, atajar, lanzarse,
+  saque de banda, etc. Se mezclan suavemente y la pisada se sincroniza con la distancia recorrida para que los pies no patinen.
+- **Modelo simple de respaldo** (`src/players/humano.js`): si un navegador no logra cargar los modelos realistas, se usa este.
+- **Estadio** (cancha, líneas de cal, arcos, redes con tela simulada, graderías, techo, torres de iluminación, bancas, pantalla gigante, vallas LED) y **público** (figuras 3D con instancing + capa de hinchas pintada).
+- **Texturas** (pasto, balón de 32 paneles, redes, vallas, emblemas originales de cada club).
 - **Sonidos** (silbato, patadas, palo, red, público, "uuuh", abucheos, cánticos): sintetizados en vivo con Web Audio API.
 
-> Nota técnica: como todos los modelos y texturas se generan en el navegador, el juego no necesita descargar archivos GLB ni KTX2
-> (lo que lo hace cargar muy rápido). Los únicos archivos pesados son los tres HDRI (≈1,5 MB cada uno).
+> Peso de descarga: ≈5,8 MB de modelos y texturas de jugadores + ≈4,5 MB de cielos HDRI.
 
 ## ✅ Estado y limitaciones conocidas
 
 - La IA juega por formación, presiona, marca, hace desmarques al espacio, centra, remata y el arquero ataja o se lanza según su atributo.
 - El arquero siempre lo maneja la CPU durante el partido (en la tanda de penales puedes manejarlo tú).
+- Hay dos cuerpos base de futbolista (varían altura, contextura y tono de piel); no hay una cara distinta para cada jugador.
 - Los gráficos apuntan a 60 FPS en calidad Media en un computador normal; en equipos modestos usa Baja.

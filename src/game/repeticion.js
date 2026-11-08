@@ -69,6 +69,7 @@ export class Repeticion {
       const hs = j.modelo.huesos;
       for (let k = 0; k < NB; k++) { hs[k].rotation.set(L(o), L(o + 1), L(o + 2)); o += 3; }
       hs[0].position.set(L(o), L(o + 1), L(o + 2)); o += 3;
+      j.modelo.alAplicarPose?.();
     }
     const m = this.balon.malla;
     m.position.set(L(o), L(o + 1), L(o + 2));

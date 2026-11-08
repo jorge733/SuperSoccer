@@ -109,14 +109,14 @@ export class Partido {
     for (const j of this.jueces) {
       const b = new THREE.Mesh(new THREE.PlaneGeometry(0.35, 0.25), new THREE.MeshStandardMaterial({ color: 0xffd23f, side: THREE.DoubleSide }));
       b.position.set(0, -0.3, 0.15);
-      j.modelo.huesos[10].add(b); // mano derecha
+      if (j.modelo.adjuntarAMano) { b.position.set(0, 0, 0); j.modelo.adjuntarAMano(b); } else j.modelo.huesos[10].add(b); // mano derecha
       j.bandera = b;
     }
     // Tarjeta del árbitro
     this.tarjeta = new THREE.Mesh(new THREE.PlaneGeometry(0.09, 0.13), new THREE.MeshBasicMaterial({ color: 0xffd400, side: THREE.DoubleSide }));
     this.tarjeta.position.set(0, -0.28, 0.02);
     this.tarjeta.visible = false;
-    this.arbitro.modelo.huesos[10].add(this.tarjeta);
+    if (this.arbitro.modelo.adjuntarAMano) { this.tarjeta.position.set(0, 0, 0); this.arbitro.modelo.adjuntarAMano(this.tarjeta); } else this.arbitro.modelo.huesos[10].add(this.tarjeta);
   }
 
   destruir() {
@@ -309,6 +309,7 @@ export class Partido {
       if (xA > MITAD_L - 25) sonido.fijarEmocion(Math.max(sonido.emocionObj, 0.25 + (xA - (MITAD_L - 25)) / 40));
     }
     this.publico.actualizar(dt, sonido.emocion, this.fase === 'gol' ? 1 : 0);
+    this.estadio.animarPublico(this.estadio.tiempo, sonido.emocion);
     sonido.actualizar(dt);
   }
 

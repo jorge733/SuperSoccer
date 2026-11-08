@@ -1,0 +1,61 @@
+<!doctype html><html><body><script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+const manager = new THREE.LoadingManager();
+manager.setURLModifier((u) => (/\.(tga|png|jpg|dds)$/i.test(u) ? 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=' : u));
+window.inspeccionar = async (url) => {
+  const obj = await new FBXLoader(manager).loadAsync(url);
+  const info = { escala: obj.scale.toArray(), hijos: [] , huesos: [] };
+  obj.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(obj);
+  info.caja = [box.min.toArray(), box.max.toArray()];
+  obj.traverse((o) => {
+    if (o.isMesh) info.hijos.push({ nombre: o.name, skinned: o.isSkinnedMesh, verts: o.geometry.attributes.position.count, tris: o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3, mats: (Array.isArray(o.material) ? o.material : [o.material]).map((m) => m.name), grupos: o.geometry.groups.length, attrs: Object.keys(o.geometry.attributes) });
+    if (o.isBone) { const p = new THREE.Vector3(); o.getWorldPosition(p); info.huesos.push(o.name + ' ' + p.toArray().map((v) => v.toFixed(1)).join(',') + ' <' + (o.parent?.name || '')); }
+  });
+  info.anims = obj.animations.length;
+  return info;
+};
+window.exportar = async (url) => {
+  const obj = await new FBXLoader(manager).loadAsync(url);
+  obj.animations = [];
+  obj.traverse((o) => { if (o.isMesh) { const ms = Array.isArray(o.material) ? o.material : [o.material]; o.material = ms.map((m, i) => new THREE.MeshStandardMaterial({ name: m.name, color: new THREE.Color(1 - i * 0.01, 1, 1), roughness: 0.5 + i * 0.1 })); if (o.material.length === 1) o.material = o.material[0]; } });
+  const buf = await new GLTFExporter().parseAsync(obj, { binary: true, onlyVisible: false });
+  const b = new Uint8Array(buf); let s = ''; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000));
+  return btoa(s);
+};
+window.zonas = async (url) => {
+  const obj = await new FBXLoader(manager).loadAsync(url);
+  let malla; obj.updateMatrixWorld(true); obj.traverse((o) => { if (o.isSkinnedMesh) malla = o; });
+  window.__escala = malla.matrixWorld.elements.slice();
+  const g = malla.geometry, pos = g.attributes.position, uv = g.attributes.uv, si = g.attributes.skinIndex, sw = g.attributes.skinWeight;
+  const nombres = malla.skeleton.bones.map((b) => b.name);
+  const S = 2048; const c = document.createElement('canvas'); c.width = c.height = S; const x = c.getContext('2d');
+  x.fillStyle = '#000'; x.fillRect(0, 0, S, S);
+  const grupo = g.groups.filter((gr) => gr.materialIndex === 0);
+  const idx = g.index;
+  const cuenta = {};
+  for (const gr of grupo) for (let t = gr.start; t < gr.start + gr.count; t += 3) {
+    const vs = [0, 1, 2].map((k) => (idx ? idx.getX(t + k) : t + k));
+    const peso = {};
+    let y = 0;
+    for (const v of vs) { y += new THREE.Vector3().fromBufferAttribute(pos, v).applyMatrix4(malla.matrixWorld).y / 3; for (let k = 0; k < 4; k++) { const n = nombres[si.getComponent(v, k)]; peso[n] = (peso[n] || 0) + sw.getComponent(v, k); } }
+    const dom = Object.entries(peso).sort((a, b) => b[1] - a[1])[0][0];
+    let col;
+    if (/Foot|Toe/.test(dom) || y < 11) col = '#ff0000';
+    else if (/Calf/.test(dom)) col = '#00ff00';
+    else if (/Thigh|Pelvis/.test(dom) || (y < 92 && /Spine$/.test(dom))) col = '#0000ff';
+    else if (/Hand|Finger/.test(dom)) col = '#ff00ff';
+    else col = '#ffff00';
+    cuenta[dom + ' ' + col] = (cuenta[dom + ' ' + col] || 0) + 1;
+    x.fillStyle = col; x.strokeStyle = col; x.lineWidth = 3;
+    x.beginPath();
+    vs.forEach((v, k) => { const px = uv.getX(v) * S, py = (1 - uv.getY(v)) * S; k ? x.lineTo(px, py) : x.moveTo(px, py); });
+    x.closePath(); x.fill(); x.stroke();
+  }
+  return { png: c.toDataURL('image/png'), cuenta: window.__escala };
+};
+window.listo = true;
+</script></body></html>

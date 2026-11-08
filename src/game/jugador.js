@@ -1,6 +1,7 @@
 // Jugador en la cancha: modelo 3D + animador + cuerpo físico + movimiento (aceleración, giro, sprint).
 import * as THREE from 'three';
 import { crearModelo } from '../players/humano.js';
+import { crearModeloRealista, hayModelosRealistas } from '../players/realista.js';
 import { Animador } from '../players/animacion.js';
 import { texturaCamiseta } from '../players/camiseta.js';
 import { angDif, clamp, MITAD_L, MITAD_A } from '../world/medidas.js';
@@ -19,7 +20,7 @@ export class Jugador {
     this.dorsal = datos?.dorsal ?? 0;
     const at = datos?.atributos || { velocidad: 70, tiro: 50, pase: 50, regate: 50, defensa: 50, fisico: 70, arquero: 30 };
     this.at = at;
-    this.modelo = crearModelo(datos?.apariencia || {});
+    this.modelo = hayModelosRealistas() ? crearModeloRealista(datos?.apariencia || {}) : crearModelo(datos?.apariencia || {});
     this.animador = new Animador(this.modelo);
     this.grupo = this.modelo.grupo;
     escena.add(this.grupo);
@@ -54,6 +55,7 @@ export class Jugador {
 
   vestir(kit) {
     this.kit = kit;
+    if (this.modelo.vestir) { this.modelo.vestir(kit, this.esArquero, this.esArbitro ? null : this.dorsal, this.esArbitro ? '' : this.nombre); return; }
     this.modelo.colorear(kit, this.esArquero);
     this.modelo.fijarTexturaCamiseta(texturaCamiseta(kit, this.esArbitro ? null : this.dorsal, this.esArbitro ? '' : this.nombre));
   }
@@ -183,6 +185,7 @@ export class Jugador {
 
   destruir(escena) {
     escena.remove(this.grupo);
+    this.modelo.destruir?.();
     if (this.cuerpo && this.fisica) this.fisica.mundo.removeRigidBody(this.cuerpo);
   }
 }
