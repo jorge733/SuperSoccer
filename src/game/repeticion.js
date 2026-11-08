@@ -1,8 +1,9 @@
 // Grabación continua de los últimos segundos (posición, giro y pose de cada hueso) para repetir los goles.
+import * as THREE from 'three';
 import { HUESOS } from '../players/humano.js';
 
 const NB = HUESOS.length;
-const POR_ENTIDAD = 3 + 1 + NB * 3 + 3; // pos(x,y,z) + rumbo + rotaciones de huesos + posición de cadera
+const POR_ENTIDAD = 3 + 1 + NB * 4 + 3; // pos(x,y,z) + rumbo + cuaterniones de huesos + posición de cadera
 const HZ = 30;
 
 export class Repeticion {
@@ -16,6 +17,7 @@ export class Repeticion {
     this.n = 0;        // cuadros grabados
     this.cabeza = 0;   // siguiente índice a escribir
     this.acum = 0;
+    this._q = [0, 0, 0, 1];
   }
 
   reiniciar() { this.n = 0; this.cabeza = 0; this.acum = 0; }
@@ -33,7 +35,7 @@ export class Repeticion {
       this.visibles[this.cabeza * this.ent.length + e] = g.visible ? 1 : 0;
       b[o++] = g.position.x; b[o++] = g.position.y; b[o++] = g.position.z; b[o++] = g.rotation.y;
       const hs = j.modelo.huesos;
-      for (let k = 0; k < NB; k++) { const r = hs[k].rotation; b[o++] = r.x; b[o++] = r.y; b[o++] = r.z; }
+      for (let k = 0; k < NB; k++) { const q = hs[k].quaternion; b[o++] = q.x; b[o++] = q.y; b[o++] = q.z; b[o++] = q.w; }
       const hp = hs[0].position; b[o++] = hp.x; b[o++] = hp.y; b[o++] = hp.z;
     }
     const m = this.balon.malla;
@@ -67,7 +69,10 @@ export class Repeticion {
       j.grupo.rotation.y = r0 + (r1 - r0) * u;
       o += 4;
       const hs = j.modelo.huesos;
-      for (let k = 0; k < NB; k++) { hs[k].rotation.set(L(o), L(o + 1), L(o + 2)); o += 3; }
+      for (let k = 0; k < NB; k++) {
+        THREE.Quaternion.slerpFlat(this._q, 0, B, a + o, B, c + o, u);
+        hs[k].quaternion.fromArray(this._q); o += 4;
+      }
       hs[0].position.set(L(o), L(o + 1), L(o + 2)); o += 3;
       j.modelo.alAplicarPose?.();
     }

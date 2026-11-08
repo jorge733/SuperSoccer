@@ -374,7 +374,7 @@ export class Partido {
     for (const eq of this.equipos) for (const j of eq.jugadores) {
       if (j.expulsado) continue;
       j.mover(0, 0, 0, false, 0);
-      if (ganador === eq) j.animador.reproducir(Math.random() < 0.5 ? 'celebrarBrazos' : 'aplaudir');
+      if (ganador === eq) j.animador.reproducir(['celebrarSalto', 'celebrarBrazos', 'aplaudir', 'baile'][Math.floor(Math.random() * 4)]);
       else if (ganador) j.animador.reproducir('lamento');
       else j.animador.reproducir('aplaudir');
       j.fijarEstado('celebrando', -1000);
@@ -560,8 +560,13 @@ export class Partido {
   // ---------- Acciones con el balón ----------
   ejecutarPatada(j, { anim = 'pase', contacto = 0.14, escala = 1, fn }) {
     if (j.pendiente) return false;
-    const def = anim;
-    j.animador.reproducir(def, { escala, velocidad: 1 });
+    j.animador.reproducir(anim, { escala, velocidad: 1 });
+    // Con captura de movimiento, el contacto con el balón ocurre en el cuadro real de la patada
+    const acc = j.animador.accion;
+    if (acc?.def.clip) {
+      acc.velocidad = anim === 'pase' ? 1.45 : 1.2;
+      contacto = j.animador.contactoActual();
+    }
     j.fijarEstado('accion', contacto + 0.22);
     j.pendiente = {
       t: contacto,
@@ -1052,11 +1057,13 @@ export class Partido {
     // Celebración: el goleador corre hacia el banderín más cercano
     const esquina = new THREE.Vector3(MITAD_L * equipo.dir * 0.92, 0, Math.sign(foco.pos.z || 1) * MITAD_A * 0.85);
     this.destinoCelebracion = esquina;
-    const anims = ['celebrarAvion', 'celebrarBrazos', 'celebrarPuno'];
+    // Mientras corren: celebración solo de brazos; al llegar, celebración de cuerpo completo (captura de movimiento)
+    const anims = ['celebrarAvion', 'celebrarPuno', 'celebrarBrazos'];
     for (const j of equipo.jugadores) {
       if (j.expulsado) continue;
       j.fijarEstado('celebrando', -1000);
-      j.animador.reproducir(j === foco ? anims[Math.floor(Math.random() * anims.length)] : (Math.random() < 0.5 ? 'celebrarBrazos' : 'aplaudir'));
+      j._celebroLlegada = false;
+      j.animador.reproducir(j === foco ? anims[Math.floor(Math.random() * 2)] : (Math.random() < 0.5 ? 'celebrarPuno' : 'aplaudir'));
     }
     for (const j of this.equipos[1 - equipo.indice].jugadores) {
       if (j.expulsado) continue;
@@ -1078,7 +1085,11 @@ export class Partido {
         if (d > lim) j.mover(dx, dz, 1, j === foco || d > 6, dt);
         else {
           j.mover(0, 0, 0, false, dt);
-          if (j === foco && this.tFase > 2.2 && j.animador.nombreAccion !== 'celebrarRodillas' && Math.random() < 0.01) j.animador.reproducir('celebrarRodillas');
+          if (!j._celebroLlegada && Math.hypot(j.vel.x, j.vel.z) < 1.5) {
+            j._celebroLlegada = true;
+            const opciones = j === foco ? ['celebrarSalto', 'baile', 'celebrarRodillas', 'celebrarSalto'] : ['celebrarSalto', 'celebrarBrazos', 'aplaudir'];
+            j.animador.reproducir(opciones[Math.floor(Math.random() * opciones.length)]);
+          }
         }
       } else {
         j.mover(0, 0, 0, false, dt);

@@ -1,0 +1,206 @@
+<!doctype html>
+<html><body>
+<!--
+  Herramienta (no forma parte del juego): convierte animaciones de captura de movimiento
+  (BVH de CMU y glTF de Quaternius) al esqueleto de animación de SuperSoccer (17 huesos).
+  La usa scripts/hornear-animaciones.cjs con un navegador sin pantalla.
+-->
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { BVHLoader } from 'three/addons/loaders/BVHLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+// Esqueleto del juego (mismo orden que src/players/humano.js)
+const HUESOS = ['hips', 'spine', 'chest', 'neck', 'head', 'lUpperArm', 'lForeArm', 'lHand', 'rUpperArm', 'rForeArm', 'rHand',
+  'lThigh', 'lShin', 'lFoot', 'rThigh', 'rShin', 'rFoot'];
+const PADRE = { spine: 'hips', chest: 'spine', neck: 'chest', head: 'neck', lUpperArm: 'chest', lForeArm: 'lUpperArm', lHand: 'lForeArm',
+  rUpperArm: 'chest', rForeArm: 'rUpperArm', rHand: 'rForeArm', lThigh: 'hips', lShin: 'lThigh', lFoot: 'lShin', rThigh: 'hips', rShin: 'rThigh', rFoot: 'rShin' };
+const ARRIBA = new THREE.Vector3(0, 1, 0), ABAJO = new THREE.Vector3(0, -1, 0);
+const DIR_MIA = { spine: ARRIBA, chest: ARRIBA, neck: ARRIBA, lUpperArm: ABAJO, lForeArm: ABAJO, lHand: ABAJO, rUpperArm: ABAJO, rForeArm: ABAJO, rHand: ABAJO,
+  lThigh: ABAJO, lShin: ABAJO, rThigh: ABAJO, rShin: ABAJO };
+
+const MAPAS = {
+  cmu: {
+    hueso: { hips: 'Hips', spine: 'Spine', chest: 'Spine1', neck: 'Neck1', head: 'Head', lUpperArm: 'LeftArm', lForeArm: 'LeftForeArm', lHand: 'LeftHand',
+      rUpperArm: 'RightArm', rForeArm: 'RightForeArm', rHand: 'RightHand', lThigh: 'LeftUpLeg', lShin: 'LeftLeg', lFoot: 'LeftFoot',
+      rThigh: 'RightUpLeg', rShin: 'RightLeg', rFoot: 'RightFoot' },
+    hijo: { spine: 'Spine1', chest: 'Neck1', neck: 'Head', lUpperArm: 'LeftForeArm', lForeArm: 'LeftHand', lHand: 'LeftFingerBase', rUpperArm: 'RightForeArm',
+      rForeArm: 'RightHand', rHand: 'RightFingerBase', lThigh: 'LeftLeg', lShin: 'LeftFoot', rThigh: 'RightLeg', rShin: 'RightFoot' },
+    pies: ['LeftToeBase', 'RightToeBase', 'LeftFoot', 'RightFoot'],
+  },
+  ual: {
+    hueso: { hips: 'DEF-hips', spine: 'DEF-spine001', chest: 'DEF-spine003', neck: 'DEF-neck', head: 'DEF-head', lUpperArm: 'DEF-upper_armL', lForeArm: 'DEF-forearmL', lHand: 'DEF-handL',
+      rUpperArm: 'DEF-upper_armR', rForeArm: 'DEF-forearmR', rHand: 'DEF-handR', lThigh: 'DEF-thighL', lShin: 'DEF-shinL', lFoot: 'DEF-footL',
+      rThigh: 'DEF-thighR', rShin: 'DEF-shinR', rFoot: 'DEF-footR' },
+    hijo: { spine: 'DEF-spine002', chest: 'DEF-neck', neck: 'DEF-head', lUpperArm: 'DEF-forearmL', lForeArm: 'DEF-handL', lHand: 'DEF-f_middle01L', rUpperArm: 'DEF-forearmR',
+      rForeArm: 'DEF-handR', rHand: 'DEF-f_middle01R', lThigh: 'DEF-shinL', lShin: 'DEF-footL', rThigh: 'DEF-shinR', rShin: 'DEF-footR' },
+    pies: ['DEF-toeL', 'DEF-toeR', 'DEF-footL', 'DEF-footR'],
+  },
+};
+
+const cache = {};
+async function fuente(tipo, archivo, nombreClip) {
+  const clave = `${tipo}|${archivo}`;
+  if (!cache[clave]) {
+    if (tipo === 'cmu') {
+      const r = await new BVHLoader().loadAsync(`/.trabajo/mocap/${archivo}`);
+      const cont = new THREE.Object3D();
+      cont.add(r.skeleton.bones[0]);
+      cont.skeleton = r.skeleton;
+      cache[clave] = { raiz: cont, clips: { _: r.clip }, buscar: (n) => r.skeleton.bones.find((b) => b.name === n) };
+    } else {
+      const g = await new GLTFLoader().loadAsync(`/.trabajo/mocap/${archivo}`);
+      const clips = Object.fromEntries(g.animations.map((a) => [a.name, a]));
+      cache[clave] = { raiz: g.scene, clips, buscar: (n) => g.scene.getObjectByName(n) };
+    }
+  }
+  const f = cache[clave];
+  const clip = f.clips[nombreClip || '_'];
+  const mixer = new THREE.AnimationMixer(f.raiz);
+  return { ...f, clip, mixer, mapa: MAPAS[tipo], tipo };
+}
+
+function capturar(f, t) {
+  if (t === null) { f.mixer.stopAllAction(); f.raiz.traverse((o) => { if (o.userData.reposo) { o.quaternion.copy(o.userData.reposo.q); o.position.copy(o.userData.reposo.p); } }); }
+  else { const a = f.mixer.clipAction(f.clip); a.play(); f.mixer.setTime(t); }
+  f.raiz.updateMatrixWorld(true);
+  const q = {}, p = {};
+  const nombres = new Set([...Object.values(f.mapa.hueso), ...Object.values(f.mapa.hijo), ...f.mapa.pies]);
+  for (const n of nombres) {
+    const o = f.buscar(n);
+    if (!o) continue;
+    q[n] = o.getWorldQuaternion(new THREE.Quaternion());
+    p[n] = o.getWorldPosition(new THREE.Vector3());
+  }
+  return { q, p };
+}
+
+// Inspección: curvas para elegir los tramos útiles
+window.inspeccionar = async (tipo, archivo, clip) => {
+  const f = await fuente(tipo, archivo, clip);
+  const dur = f.clip.duration, out = [];
+  const m = f.mapa.hueso;
+  let prev = null;
+  for (let t = 0; t <= dur; t += 0.1) {
+    const c = capturar(f, t);
+    const vel = (n) => (prev ? c.p[n].distanceTo(prev.p[n]) / 0.1 : 0);
+    out.push(`${t.toFixed(1)} cad=${c.p[m.hips].y.toFixed(1)} x=${c.p[m.hips].x.toFixed(1)} z=${c.p[m.hips].z.toFixed(1)} vPieI=${vel(m.lFoot).toFixed(0)} vPieD=${vel(m.rFoot).toFixed(0)}`);
+    prev = c;
+  }
+  const nombres = []; f.raiz.traverse((o) => { if (o.isBone || o.type === 'Bone' || /DEF/.test(o.name)) nombres.push(o.name); });
+  return { dur, frames: f.clip.tracks[0]?.times.length, lineas: out.join('\n'), nombres: nombres.join(',') };
+};
+
+// Hornea un tramo [t0, t1] al esqueleto del juego.
+// op: { bucle, enSitio, espejo, girar (rad), escalaTiempo }
+window.hornear = async (tipo, archivo, clip, t0, t1, op = {}) => {
+  const f = await fuente(tipo, archivo, clip);
+  const m = f.mapa.hueso, h = f.mapa.hijo;
+  // Pose de reposo: CMU = primer cuadro (pose T); UAL = pose por defecto de los nodos
+  if (tipo === 'ual') f.raiz.traverse((o) => { if (!o.userData.reposo) o.userData.reposo = { q: o.quaternion.clone(), p: o.position.clone() }; });
+  const reposo = capturar(f, tipo === 'cmu' ? 0 : null);
+  // Orientación: el personaje debe mirar a +Z con su izquierda en +X
+  const izq = reposo.p[m.lThigh].x - reposo.p[m.rThigh].x;
+  const R = new THREE.Quaternion();
+  if (izq < 0) R.setFromAxisAngle(ARRIBA, Math.PI);
+  if (op.girar) R.premultiply(new THREE.Quaternion().setFromAxisAngle(ARRIBA, op.girar));
+  const Rinv = R.clone().invert();
+  const piso = Math.min(...f.mapa.pies.filter((n) => reposo.p[n]).map((n) => reposo.p[n].y));
+  const alturaCadera = reposo.p[m.hips].y - piso;
+  const escala = 0.98 / alturaCadera;
+  // Correcciones por diferencia de pose de reposo (brazos en T o en A vs. brazos abajo)
+  const C = {}, WrestInv = {};
+  for (const b of HUESOS) {
+    WrestInv[b] = reposo.q[m[b]].clone().invert();
+    C[b] = new THREE.Quaternion();
+    if (DIR_MIA[b] && h[b] && reposo.p[h[b]]) {
+      const d = reposo.p[h[b]].clone().sub(reposo.p[m[b]]).applyQuaternion(R).normalize();
+      C[b].setFromUnitVectors(DIR_MIA[b], d);
+    }
+  }
+  const fps = 30, n = Math.max(2, Math.round((t1 - t0) * fps) + 1);
+  const Q = [], P = [];
+  const W = {};
+  for (let i = 0; i < n; i++) {
+    const t = t0 + ((t1 - t0) * i) / (n - 1);
+    const c = capturar(f, t);
+    for (const b of HUESOS) {
+      const D = c.q[m[b]].clone().multiply(WrestInv[b]);
+      const Dp = R.clone().multiply(D).multiply(Rinv);
+      W[b] = Dp.multiply(C[b]);
+    }
+    for (const b of HUESOS) {
+      const l = PADRE[b] ? W[PADRE[b]].clone().invert().multiply(W[b]) : W[b].clone();
+      Q.push(l.x, l.y, l.z, l.w);
+    }
+    const hp = c.p[m.hips].clone().applyQuaternion(R);
+    P.push(hp.x * escala, (c.p[m.hips].y - piso) * escala - 0.98, hp.z * escala);
+  }
+  // Alinear: el desplazamiento de la cadera (carrera previa a la patada) apunta hacia +Z
+  if (op.alinear) {
+    const ax = P[(n - 1) * 3] - P[0], az = P[(n - 1) * 3 + 2] - P[2];
+    const yaw = Math.atan2(ax, az);
+    const Ry = new THREE.Quaternion().setFromAxisAngle(ARRIBA, -yaw);
+    const v = new THREE.Vector3(), q = new THREE.Quaternion();
+    for (let i = 0; i < n; i++) {
+      const o = i * HUESOS.length * 4;
+      q.set(Q[o], Q[o + 1], Q[o + 2], Q[o + 3]).premultiply(Ry);
+      Q[o] = q.x; Q[o + 1] = q.y; Q[o + 2] = q.z; Q[o + 3] = q.w;
+      v.set(P[i * 3], 0, P[i * 3 + 2]).applyQuaternion(Ry);
+      P[i * 3] = v.x; P[i * 3 + 2] = v.z;
+    }
+  }
+  // Velocidad media (para sincronizar la pisada con la carrera) y quitar el avance de la cadera
+  const dx = P[(n - 1) * 3] - P[0], dz = P[(n - 1) * 3 + 2] - P[2];
+  const avance = Math.hypot(dx, dz);
+  for (let i = 0; i < n; i++) {
+    const u = i / (n - 1);
+    if (op.enSitio !== false) { P[i * 3] -= P[0] + dx * u; P[i * 3 + 2] -= P[2] + dz * u; }
+  }
+  // Paso de pie: en ciclos sin avance (en el lugar) se estima con la velocidad del pie de apoyo
+  let zancada = avance;
+  if (op.bucle && avance < 0.2) {
+    let s = 0;
+    let prev = null;
+    for (let i = 0; i <= 30; i++) {
+      const t = t0 + ((t1 - t0) * i) / 30;
+      const c = capturar(f, t);
+      const pies = [m.lFoot, m.rFoot].map((k) => c.p[k].clone().applyQuaternion(R));
+      const apoyo = pies[0].y < pies[1].y ? 0 : 1;
+      if (prev) s += Math.abs(pies[apoyo].z - prev[apoyo].z) * escala;
+      prev = pies;
+    }
+    zancada = s;
+  }
+  // Fase 0 de los ciclos: el pie izquierdo en su punto más adelantado (justo antes de pisar)
+  let fase0 = 0;
+  if (op.bucle) {
+    let mejor = -Infinity;
+    for (let i = 0; i <= 40; i++) {
+      const t = t0 + ((t1 - t0) * i) / 40;
+      const c = capturar(f, t);
+      const rel = c.p[m.lFoot].clone().sub(c.p[m.hips]).applyQuaternion(R);
+      if (rel.z > mejor) { mejor = rel.z; fase0 = i / 40; }
+    }
+  }
+  const r = (v) => Math.round(v * 10000) / 10000;
+  // Espejo (patada con la izquierda -> derecha)
+  if (op.espejo) {
+    const nombres = HUESOS.map((b) => (b[0] === 'l' && PADRE[b] !== undefined && b !== 'lamento' ? 'r' + b.slice(1) : b[0] === 'r' ? 'l' + b.slice(1) : b));
+    const Q2 = Q.slice();
+    for (let i = 0; i < n; i++) {
+      HUESOS.forEach((b, k) => {
+        const src = HUESOS.indexOf(nombres[k]);
+        const o = (i * HUESOS.length + src) * 4, d = (i * HUESOS.length + k) * 4;
+        Q2[d] = Q[o]; Q2[d + 1] = -Q[o + 1]; Q2[d + 2] = -Q[o + 2]; Q2[d + 3] = Q[o + 3];
+      });
+      P[i * 3] = -P[i * 3];
+    }
+    Q.splice(0, Q.length, ...Q2);
+  }
+  return { fps, n, dur: (t1 - t0), zancada: r(zancada), fase0: r(fase0), escala: r(escala), q: Q.map(r), p: P.map(r) };
+};
+window.listo = true;
+</script>
+</body></html>

@@ -153,6 +153,16 @@ scripts/              Generador de planteles y preparación de modelos 3D
 
 | Futbolistas 3D "Sports_Male_02" y "Sports_Male_03" (modelos, esqueletos y texturas) | [Microsoft Rocketbox Avatar Library](https://github.com/microsoft/Microsoft-Rocketbox) | **MIT** (ver `public/modelos/LICENCIA-Rocketbox.txt`) | Jugadores, arqueros y árbitros |
 | Transcodificador Basis Universal (`public/basis/`) | Binomial / three.js | Apache 2.0 | Lectura de texturas KTX2 |
+| Animaciones de reposo, caminar, trotar, sprint y baile | [Universal Animation Library](https://quaternius.com) de Quaternius (versión estándar gratuita, glTF) | **CC0** | Locomoción y celebración |
+| Patadas reales a un balón (tiros y pases) y saltos de celebración | [CMU Graphics Lab Motion Capture Database](http://mocap.cs.cmu.edu), conversión BVH de B. Hahne | Uso libre, también comercial | Tiros, pases y celebraciones |
+
+> *The data used in this project was obtained from mocap.cs.cmu.edu. The database was created with funding from NSF EIA-0196217.*
+
+**Cómo se prepararon las animaciones de captura de movimiento:** `scripts/hornear-animaciones.cjs` (con `scripts/hornear-animaciones.html`)
+lee los BVH de CMU y el glTF de Quaternius, elige los tramos indicados en `scripts/receta-animaciones.json`, los traslada al esqueleto
+de animación del juego (17 huesos) corrigiendo las diferencias de pose de referencia, y guarda el resultado en `src/data/animaciones.json` (≈150 KB).
+En el juego, los ciclos de caminar/trotar/sprint se mezclan según la velocidad y avanzan sincronizados con la distancia recorrida
+(para que los pies no patinen); cada patada golpea el balón en el cuadro exacto del contacto capturado.
 
 **Cómo se prepararon los futbolistas realistas** (todo queda en el repositorio para poder repetirlo):
 
@@ -166,8 +176,9 @@ scripts/              Generador de planteles y preparación de modelos 3D
 
 **Hecho por código, sin licencias de terceros:**
 
-- **Animaciones** (`src/players/animacion.js`): trotar, correr, pasar, tirar, cabecear, barrer, caer, celebrar, atajar, lanzarse,
-  saque de banda, etc. Se mezclan suavemente y la pisada se sincroniza con la distancia recorrida para que los pies no patinen.
+- **Animaciones procedurales** (`src/players/animacion.js`) para lo que no hay captura de movimiento libre: cabecear, barrer, caer, atajar,
+  lanzarse del arquero, saque de banda, celebraciones de brazos, correr de lado o de espaldas, guardia del arquero y proteger el balón.
+  Se combinan con las capturadas mediante mezcla esférica de rotaciones (cuaterniones).
 - **Modelo simple de respaldo** (`src/players/humano.js`): si un navegador no logra cargar los modelos realistas, se usa este.
 - **Estadio** (cancha, líneas de cal, arcos, redes con tela simulada, graderías, techo, torres de iluminación, bancas, pantalla gigante, vallas LED) y **público** (figuras 3D con instancing + capa de hinchas pintada).
 - **Texturas** (pasto, balón de 32 paneles, redes, vallas, emblemas originales de cada club).

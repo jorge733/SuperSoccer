@@ -1,7 +1,9 @@
 // Animaciones procedurales con mezcla suave (blending):
 // locomoción (quieto/trote/carrera/sprint, lateral y de espaldas) sincronizada con la distancia recorrida
 // para que los pies no "patinen", más acciones (patear, cabecear, barrer, caer, celebrar, atajar...).
+import * as THREE from 'three';
 import { HUESOS, IDX } from './humano.js';
+import DATOS_MOCAP from '../data/animaciones.json';
 
 const NB = HUESOS.length;
 const TAM = NB * 3 + 3; // rotaciones (x,y,z) por hueso + desplazamiento de cadera
@@ -212,47 +214,147 @@ function accionReflejada(nombre) {
   return CACHE_REFLEJO.get(nombre);
 }
 
+// ---------- Clips de captura de movimiento (horneados en src/data/animaciones.json) ----------
+const CLIPS = {};
+for (const [nombre, c] of Object.entries(DATOS_MOCAP.clips || {})) {
+  CLIPS[nombre] = { ...c, q: Float32Array.from(c.q), p: Float32Array.from(c.p) };
+}
+export const hayMocap = (n) => !!CLIPS[n];
+
+// Acciones que se reproducen con mocap (si el clip existe); el resto usa las claves procedurales.
+const ACCION_CLIP = {
+  patada: ['tiro', 'tiro2'], pase: ['pase'], celebrarSalto: ['celebrarSalto'], baile: ['baile'],
+};
+
+const NQ = NB * 4;
+const TAMQ = NQ + 3;
+const OFFQ = NQ;
+const _q1 = new THREE.Quaternion(), _q2 = new THREE.Quaternion(), _e = new THREE.Euler();
+const ESPEJO_IDX = HUESOS.map((n) => {
+  const m = n[0] === 'l' && IDX['r' + n.slice(1)] !== undefined ? 'r' + n.slice(1) : n[0] === 'r' && IDX['l' + n.slice(1)] !== undefined ? 'l' + n.slice(1) : n;
+  return IDX[m];
+});
+
+// Muestrea un clip en el tiempo t (segundos) y escribe cuaterniones locales + desplazamiento de cadera.
+function muestrearClip(c, t, out, espejo = false) {
+  const per = c.dur;
+  let u;
+  if (c.bucle) { u = ((t % per) + per) % per / per; } else u = Math.min(1, Math.max(0, t / per));
+  const f = u * (c.n - 1);
+  const i0 = Math.floor(f), i1 = Math.min(c.n - 1, i0 + 1), k = f - i0;
+  for (let b = 0; b < NB; b++) {
+    const src = espejo ? ESPEJO_IDX[b] : b;
+    THREE.Quaternion.slerpFlat(out, b * 4, c.q, (i0 * NB + src) * 4, c.q, (i1 * NB + src) * 4, k);
+    if (espejo) { out[b * 4 + 1] = -out[b * 4 + 1]; out[b * 4 + 2] = -out[b * 4 + 2]; }
+  }
+  for (let e = 0; e < 3; e++) out[OFFQ + e] = c.p[i0 * 3 + e] + (c.p[i1 * 3 + e] - c.p[i0 * 3 + e]) * k;
+  if (espejo) out[OFFQ] = -out[OFFQ];
+}
+
+// Convierte una pose de ángulos (formato procedural) a cuaterniones
+function eulerAQuat(pe, out) {
+  for (let b = 0; b < NB; b++) {
+    _e.set(pe[b * 3], pe[b * 3 + 1], pe[b * 3 + 2]);
+    _q1.setFromEuler(_e);
+    out[b * 4] = _q1.x; out[b * 4 + 1] = _q1.y; out[b * 4 + 2] = _q1.z; out[b * 4 + 3] = _q1.w;
+  }
+  out[OFFQ] = pe[OFF]; out[OFFQ + 1] = pe[OFF + 1]; out[OFFQ + 2] = pe[OFF + 2];
+}
+
+// Mezcla esférica por hueso: destino = slerp(destino, origen, peso)
+function mezclarQ(dest, orig, peso, mascara, conCadera = true) {
+  if (peso <= 0) return;
+  for (let b = 0; b < NB; b++) {
+    if (mascara === 'superior' && !ES_SUPERIOR.has(HUESOS[b])) continue;
+    THREE.Quaternion.slerpFlat(dest, b * 4, dest, b * 4, orig, b * 4, Math.min(1, peso));
+  }
+  if (conCadera && mascara !== 'superior') for (let e = 0; e < 3; e++) dest[OFFQ + e] += (orig[OFFQ + e] - dest[OFFQ + e]) * peso;
+}
+
+// Suma ponderada de poses (para mezclar ciclos de locomoción), con alineación de signo
+function acumular(dest, orig, peso, primero) {
+  for (let b = 0; b < NB; b++) {
+    const o = b * 4;
+    let s = peso;
+    if (!primero && dest[o] * orig[o] + dest[o + 1] * orig[o + 1] + dest[o + 2] * orig[o + 2] + dest[o + 3] * orig[o + 3] < 0) s = -peso;
+    for (let e = 0; e < 4; e++) dest[o + e] = (primero ? 0 : dest[o + e]) + orig[o + e] * s;
+  }
+  for (let e = 0; e < 3; e++) dest[OFFQ + e] = (primero ? 0 : dest[OFFQ + e]) + orig[OFFQ + e] * peso;
+}
+
+function normalizar(p) {
+  for (let b = 0; b < NB; b++) {
+    const o = b * 4;
+    const l = Math.hypot(p[o], p[o + 1], p[o + 2], p[o + 3]) || 1;
+    p[o] /= l; p[o + 1] /= l; p[o + 2] /= l; p[o + 3] /= l;
+  }
+}
+
+// Rotación extra (en grados de Euler) aplicada sobre un hueso: q = q * delta
+function sumarEuler(p, hueso, x, y, z) {
+  const o = IDX[hueso] * 4;
+  _q1.fromArray(p, o);
+  _q2.setFromEuler(_e.set(x, y, z));
+  _q1.multiply(_q2).toArray(p, o);
+}
+
 export class Animador {
   constructor(modelo) {
     this.modelo = modelo;
     this.fase = Math.random();
     this.tiempo = Math.random() * 10;
-    this.loco = nuevaPose();
-    this.final = nuevaPose();
-    this.tmp = nuevaPose();
-    this.accion = null;      // { def, t, peso, velocidad, nombre }
-    this.saliente = null;    // acción que se está desvaneciendo
+    this.locoE = nuevaPose();       // locomoción procedural (ángulos) para movimientos laterales/de espaldas
+    this.tmpE = nuevaPose();
+    this.loco = new Float32Array(TAMQ);
+    this.final = new Float32Array(TAMQ);
+    this.tmp = new Float32Array(TAMQ);
+    this.tmp2 = new Float32Array(TAMQ);
+    this.accion = null;
+    this.saliente = null;
     this.intensidad = 0;
     this.lateral = 0;
     this.adelante = 1;
     this.guardia = 0;
     this.proteger = 0;
     this.velSuave = 0;
+    this.mocap = !!CLIPS.trotar;
   }
 
   get ocupado() { return !!this.accion && !this.accion.def.bucle && this.accion.t < this.accion.def.dur * 0.85; }
   get nombreAccion() { return this.accion?.nombre || null; }
 
-  reproducir(nombre, { espejo = false, velocidad = 1, escala = 1 } = {}) {
+  definicion(nombre, espejo) {
+    const clips = ACCION_CLIP[nombre]?.filter((c) => CLIPS[c]);
+    if (clips && clips.length) {
+      const c = CLIPS[clips[Math.floor(Math.random() * clips.length)]];
+      return { clip: c, dur: c.dur, contacto: c.contacto ?? 0.2, bucle: c.bucle, mascara: 'todo', espejo };
+    }
     const def = espejo ? accionReflejada(nombre) : ACCIONES[nombre];
+    return def || null;
+  }
+
+  // Momento (en segundos reales) en que el pie toca el balón en la acción actual
+  contactoActual() {
+    const a = this.accion;
+    return a && a.def.contacto !== undefined ? a.def.contacto / a.velocidad : null;
+  }
+
+  reproducir(nombre, { espejo = false, velocidad = 1, escala = 1 } = {}) {
+    const def = this.definicion(nombre, espejo);
     if (!def) return;
     if (this.accion) this.saliente = { ...this.accion, pesoSalida: this.accion.peso };
-    this.accion = { def, t: 0, peso: 0, velocidad, nombre, escala };
+    this.accion = { def, t: 0, peso: 0, velocidad, nombre, escala, espejo };
   }
 
   detener() {
     if (this.accion) { this.saliente = { ...this.accion, pesoSalida: this.accion.peso }; this.accion = null; }
   }
 
-  // velLocal: velocidad en coordenadas del jugador (x lateral, z adelante) en m/s
   actualizar(dt, { vx = 0, vz = 0, guardia = 0, proteger = 0 } = {}) {
     this.tiempo += dt;
     const vel = Math.hypot(vx, vz);
     this.velSuave += (vel - this.velSuave) * Math.min(1, dt * 8);
     const v = this.velSuave;
-    // Largo de ciclo (2 pasos) según la velocidad: sincroniza la pisada con lo recorrido.
-    const ciclo = 1.25 + 0.42 * v;
-    this.fase = (this.fase + (v * dt) / ciclo + (v < 0.3 ? dt * 0.0 : 0)) % 1;
     const s = Math.min(1, v / 8.5);
     this.intensidad = s;
     if (vel > 0.2) {
@@ -261,7 +363,7 @@ export class Animador {
     }
     this.guardia += (guardia - this.guardia) * Math.min(1, dt * 5);
     this.proteger += (proteger - this.proteger) * Math.min(1, dt * 6);
-    this.locomocion(this.loco, v, s);
+    this.locomocion(this.loco, v, s, dt);
 
     const f = this.final;
     f.set(this.loco);
@@ -271,7 +373,7 @@ export class Animador {
       else {
         this.saliente.t += dt * this.saliente.velocidad;
         this.muestrear(this.saliente, this.tmp);
-        this.mezclar(f, this.tmp, this.saliente.pesoSalida, this.saliente.def.mascara);
+        mezclarQ(f, this.tmp, this.saliente.pesoSalida, this.saliente.def.mascara);
       }
     }
     if (this.accion) {
@@ -280,17 +382,122 @@ export class Animador {
       const d = a.def;
       if (!d.bucle && a.t >= d.dur) { this.accion = null; }
       else {
-        const entrada = Math.min(1, a.t / 0.08);
-        const salida = d.bucle ? 1 : Math.min(1, (d.dur - a.t) / 0.12);
+        const entrada = Math.min(1, a.t / (d.clip ? 0.12 : 0.08));
+        const salida = d.bucle ? 1 : Math.min(1, (d.dur - a.t) / (d.clip ? 0.2 : 0.12));
         a.peso = Math.min(entrada, salida);
         this.muestrear(a, this.tmp);
-        this.mezclar(f, this.tmp, a.peso, d.mascara);
+        mezclarQ(f, this.tmp, a.peso, d.mascara);
       }
     }
     this.aplicar(f);
   }
 
-  locomocion(p, v, s) {
+  // Locomoción: mezcla de ciclos de captura (reposo, caminar, trotar, sprint) sincronizados por fase
+  locomocion(p, v, s, dt) {
+    if (!this.mocap) {
+      this.fase = (this.fase + (v * dt) / (1.25 + 0.42 * v)) % 1;
+      locomocionProcedural.call(this, this.locoE, v, s);
+      eulerAQuat(this.locoE, p);
+      return;
+    }
+    const w = { reposo: 0, caminar: 0, trotar: 0, correr: 0 };
+    const tramo = (x, a, b) => Math.min(1, Math.max(0, (x - a) / (b - a)));
+    if (v < 0.25) w.reposo = 1;
+    else if (v < 1.8) { const k = tramo(v, 0.25, 1.8); w.reposo = 1 - k; w.caminar = k; }
+    else if (v < 4.2) { const k = tramo(v, 1.8, 4.2); w.caminar = 1 - k; w.trotar = k; }
+    else { const k = tramo(v, 4.2, 7.0); w.trotar = 1 - k; w.correr = k; }
+    // Fase común: avanza según la distancia recorrida y la zancada de los ciclos activos
+    let L = 0, wm = 0;
+    for (const n of ['caminar', 'trotar', 'correr']) { L += w[n] * CLIPS[n].zancada; wm += w[n]; }
+    if (wm > 0.01) this.fase = (this.fase + (v * dt) / (L / wm)) % 1;
+    let primero = true;
+    for (const n of ['reposo', 'caminar', 'trotar', 'correr']) {
+      if (w[n] < 0.001) continue;
+      const c = CLIPS[n];
+      const t = n === 'reposo' ? this.tiempo : ((this.fase + c.fase0) % 1) * c.dur;
+      muestrearClip(c, t, this.tmp2);
+      acumular(p, this.tmp2, w[n], primero);
+      primero = false;
+    }
+    normalizar(p);
+    // Movimiento lateral o de espaldas: se mezcla con la locomoción procedural (que sabe hacerlo)
+    const atras = Math.max(0, -this.adelante) + Math.abs(this.lateral) * 0.8;
+    const wp = v > 0.3 ? Math.min(1, atras * 1.2) : 0;
+    if (wp > 0.02) {
+      locomocionProcedural.call(this, this.locoE, v, s);
+      eulerAQuat(this.locoE, this.tmp2);
+      mezclarQ(p, this.tmp2, wp, 'todo');
+    }
+    // Capas aditivas: guardia (arquero/defensa) y proteger el balón
+    const g = this.guardia;
+    if (g > 0.01) {
+      const k = g * (1 - s * 0.6);
+      sumarEuler(p, 'lThigh', -0.38 * k, 0, 0.12 * k); sumarEuler(p, 'rThigh', -0.38 * k, 0, -0.12 * k);
+      sumarEuler(p, 'lShin', 0.75 * k, 0, 0); sumarEuler(p, 'rShin', 0.75 * k, 0, 0);
+      sumarEuler(p, 'lFoot', -0.35 * k, 0, 0); sumarEuler(p, 'rFoot', -0.35 * k, 0, 0);
+      sumarEuler(p, 'spine', 0.28 * k, 0, 0);
+      sumarEuler(p, 'lUpperArm', -0.4 * k, 0, 0.35 * k); sumarEuler(p, 'rUpperArm', -0.4 * k, 0, -0.35 * k);
+      sumarEuler(p, 'lForeArm', -0.6 * k, 0, 0); sumarEuler(p, 'rForeArm', -0.6 * k, 0, 0);
+      p[OFFQ + 1] -= 0.12 * k;
+    }
+    const pr = this.proteger;
+    if (pr > 0.01) {
+      sumarEuler(p, 'lUpperArm', 0.25 * pr, 0, 0.55 * pr); sumarEuler(p, 'rUpperArm', 0.25 * pr, 0, -0.55 * pr);
+      sumarEuler(p, 'spine', 0.15 * pr, 0, 0);
+      p[OFFQ + 1] -= 0.05 * pr;
+    }
+  }
+
+  muestrear(a, salida) {
+    const d = a.def;
+    const esc = a.escala ?? 1;
+    if (d.clip) {
+      muestrearClip(d.clip, a.t, salida, !!d.espejo);
+      if (esc < 1) {
+        for (let b = 0; b < NB; b++) THREE.Quaternion.slerpFlat(salida, b * 4, this.loco, b * 4, salida, b * 4, esc);
+        for (let e = 0; e < 3; e++) salida[OFFQ + e] = this.loco[OFFQ + e] + (salida[OFFQ + e] - this.loco[OFFQ + e]) * esc;
+      }
+      return;
+    }
+    // Acción por claves (ángulos): los huesos no indicados toman la locomoción
+    let t = a.t;
+    if (d.bucle) t %= d.dur;
+    const cl = d.claves;
+    let i = 0;
+    while (i < cl.length - 2 && cl[i + 1].t < t) i++;
+    const k0 = cl[i], k1 = cl[i + 1] || cl[i];
+    const u = k1.t > k0.t ? suaveT(Math.min(1, Math.max(0, (t - k0.t) / (k1.t - k0.t)))) : 0;
+    salida.set(this.loco);
+    const huesos = new Set([...Object.keys(k0.h), ...Object.keys(k1.h)]);
+    // Ángulos base de la locomoción para los huesos que solo aparecen en una de las dos claves
+    for (const n of huesos) {
+      const b = IDX[n];
+      _q2.fromArray(this.loco, b * 4);
+      const v0 = k0.h[n], v1 = k1.h[n];
+      const qa = v0 ? new THREE.Quaternion().setFromEuler(_e.set(v0[0], v0[1], v0[2])) : _q2.clone();
+      const qb = v1 ? new THREE.Quaternion().setFromEuler(_e.set(v1[0], v1[1], v1[2])) : _q2.clone();
+      qa.slerp(qb, u);
+      if (esc < 1) qa.copy(_q2.clone().slerp(qa, esc));
+      qa.toArray(salida, b * 4);
+    }
+    const o0 = k0.o || [0, 0, 0], o1 = k1.o || [0, 0, 0];
+    for (let e = 0; e < 3; e++) {
+      const extra = o0[e] + (o1[e] - o0[e]) * u;
+      salida[OFFQ + e] = (e === 1 ? this.loco[OFFQ + 1] * 0.3 : this.loco[OFFQ + e]) + extra * esc;
+    }
+  }
+
+  aplicar(p) {
+    const hs = this.modelo.huesos;
+    for (let b = 0; b < NB; b++) hs[b].quaternion.set(p[b * 4], p[b * 4 + 1], p[b * 4 + 2], p[b * 4 + 3]);
+    hs[0].position.set(p[OFFQ], 0.98 + p[OFFQ + 1], p[OFFQ + 2]);
+    this.modelo.alAplicarPose?.();
+  }
+}
+
+// Locomoción procedural (ángulos): se usa para correr de lado o de espaldas y como respaldo.
+function locomocionProcedural(p, v, s) {
+
     p.fill(0);
     const ph = this.fase * TAU;
     const t = this.tiempo;
@@ -323,78 +530,6 @@ export class Animador {
     // Respiración en reposo
     p[OFF + 1] += Math.sin(t * 2.1) * 0.004 * quieto;
 
-    // Guardia de arquero / defensa (rodillas flectadas, brazos abiertos)
-    const g = this.guardia;
-    if (g > 0.01) {
-      const k = g * (1 - s * 0.6);
-      p[IDX.lThigh * 3] -= 0.38 * k; p[IDX.rThigh * 3] -= 0.38 * k;
-      p[IDX.lShin * 3] += 0.75 * k; p[IDX.rShin * 3] += 0.75 * k;
-      p[IDX.lFoot * 3] -= 0.35 * k; p[IDX.rFoot * 3] -= 0.35 * k;
-      p[IDX.lThigh * 3 + 2] += 0.12 * k; p[IDX.rThigh * 3 + 2] -= 0.12 * k;
-      p[IDX.spine * 3] += 0.28 * k;
-      p[IDX.lUpperArm * 3] = p[IDX.lUpperArm * 3] * (1 - k) - 0.45 * k; p[IDX.lUpperArm * 3 + 2] += 0.35 * k;
-      p[IDX.rUpperArm * 3] = p[IDX.rUpperArm * 3] * (1 - k) - 0.45 * k; p[IDX.rUpperArm * 3 + 2] -= 0.35 * k;
-      p[IDX.lForeArm * 3] = -0.7 * k + p[IDX.lForeArm * 3] * (1 - k);
-      p[IDX.rForeArm * 3] = -0.7 * k + p[IDX.rForeArm * 3] * (1 - k);
-      p[OFF + 1] -= 0.12 * k;
-    }
-    const pr = this.proteger;
-    if (pr > 0.01) {
-      p[IDX.lUpperArm * 3 + 2] += 0.55 * pr; p[IDX.rUpperArm * 3 + 2] -= 0.55 * pr;
-      p[IDX.lUpperArm * 3] += 0.25 * pr; p[IDX.rUpperArm * 3] += 0.25 * pr;
-      p[IDX.spine * 3] += 0.15 * pr;
-      p[OFF + 1] -= 0.05 * pr;
-    }
-  }
-
-  muestrear(a, salida) {
-    const d = a.def;
-    let t = a.t;
-    if (d.bucle) t = t % d.dur;
-    const cl = d.claves;
-    let i = 0;
-    while (i < cl.length - 2 && cl[i + 1].t < t) i++;
-    const k0 = cl[i], k1 = cl[i + 1] || cl[i];
-    const u = k1.t > k0.t ? suaveT(Math.min(1, Math.max(0, (t - k0.t) / (k1.t - k0.t)))) : 0;
-    salida.set(this.loco);
-    // Mezcla entre claves; huesos ausentes en una clave usan la locomoción.
-    const huesos = new Set([...Object.keys(k0.h), ...Object.keys(k1.h)]);
-    const esc = a.escala ?? 1;
-    for (const n of huesos) {
-      const j = IDX[n] * 3;
-      const v0 = k0.h[n], v1 = k1.h[n];
-      for (let e = 0; e < 3; e++) {
-        const base = this.loco[j + e];
-        const a0 = v0 ? v0[e] * esc + base * (1 - esc) : base;
-        const a1 = v1 ? v1[e] * esc + base * (1 - esc) : base;
-        salida[j + e] = a0 + (a1 - a0) * u;
-      }
-    }
-    const o0 = k0.o || [0, 0, 0], o1 = k1.o || [0, 0, 0];
-    for (let e = 0; e < 3; e++) {
-      const extra = o0[e] + (o1[e] - o0[e]) * u;
-      salida[OFF + e] = (e === 1 ? this.loco[OFF + 1] * 0.3 : this.loco[OFF + e]) + extra * esc;
-    }
-  }
-
-  mezclar(destino, origen, peso, mascara) {
-    if (peso <= 0) return;
-    for (let b = 0; b < NB; b++) {
-      if (mascara === 'superior' && !ES_SUPERIOR.has(HUESOS[b])) continue;
-      for (let e = 0; e < 3; e++) {
-        const i = b * 3 + e;
-        destino[i] += (origen[i] - destino[i]) * peso;
-      }
-    }
-    if (mascara !== 'superior') for (let e = 0; e < 3; e++) destino[OFF + e] += (origen[OFF + e] - destino[OFF + e]) * peso;
-  }
-
-  aplicar(p) {
-    const hs = this.modelo.huesos;
-    for (let b = 0; b < NB; b++) hs[b].rotation.set(p[b * 3], p[b * 3 + 1], p[b * 3 + 2]);
-    hs[0].position.set(p[OFF], 0.98 + p[OFF + 1], p[OFF + 2]);
-    this.modelo.alAplicarPose?.();
-  }
 }
 
 export { ACCIONES };

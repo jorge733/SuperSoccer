@@ -1,0 +1,103 @@
+{
+  "reposo": {
+    "tipo": "ual",
+    "archivo": "AnimationLibrary_Godot_Standard.gltf",
+    "clip": "Idle_Loop",
+    "t0": 0,
+    "t1": 2.5,
+    "op": {
+      "bucle": true
+    },
+    "credito": "Quaternius UAL (CC0)"
+  },
+  "caminar": {
+    "tipo": "ual",
+    "archivo": "AnimationLibrary_Godot_Standard.gltf",
+    "clip": "Walk_Loop",
+    "t0": 0,
+    "t1": 1.3333,
+    "op": {
+      "bucle": true
+    },
+    "credito": "Quaternius UAL (CC0)",
+    "zancada": 1.6
+  },
+  "trotar": {
+    "tipo": "ual",
+    "archivo": "AnimationLibrary_Godot_Standard.gltf",
+    "clip": "Jog_Fwd_Loop",
+    "t0": 0,
+    "t1": 0.9167,
+    "op": {
+      "bucle": true
+    },
+    "credito": "Quaternius UAL (CC0)",
+    "zancada": 3.2
+  },
+  "correr": {
+    "tipo": "ual",
+    "archivo": "AnimationLibrary_Godot_Standard.gltf",
+    "clip": "Sprint_Loop",
+    "t0": 0,
+    "t1": 0.6667,
+    "op": {
+      "bucle": true
+    },
+    "credito": "Quaternius UAL (CC0)",
+    "zancada": 5.0
+  },
+  "baile": {
+    "tipo": "ual",
+    "archivo": "AnimationLibrary_Godot_Standard.gltf",
+    "clip": "Dance_Loop",
+    "t0": 0,
+    "t1": 1.0,
+    "op": {
+      "bucle": true
+    },
+    "credito": "Quaternius UAL (CC0)"
+  },
+  "tiro": {
+    "tipo": "cmu",
+    "archivo": "11_01.bvh",
+    "t0": 3.12,
+    "t1": 3.95,
+    "contacto": 0.3,
+    "op": {
+      "alinear": true
+    },
+    "credito": "CMU Graphics Lab Motion Capture Database (sujeto 11)"
+  },
+  "tiro2": {
+    "tipo": "cmu",
+    "archivo": "10_05.bvh",
+    "t0": 2.22,
+    "t1": 3.05,
+    "contacto": 0.3,
+    "op": {
+      "alinear": true
+    },
+    "credito": "CMU Graphics Lab Motion Capture Database (sujeto 10)"
+  },
+  "pase": {
+    "tipo": "cmu",
+    "archivo": "10_04.bvh",
+    "t0": 2.72,
+    "t1": 3.45,
+    "contacto": 0.3,
+    "op": {
+      "alinear": true
+    },
+    "credito": "CMU Graphics Lab Motion Capture Database (sujeto 10)"
+  },
+  "celebrarSalto": {
+    "tipo": "cmu",
+    "archivo": "49_02.bvh",
+    "t0": 2.0,
+    "t1": 2.8,
+    "op": {
+      "bucle": true
+    },
+    "credito": "CMU Graphics Lab Motion Capture Database (sujeto 49)"
+  }
+}
